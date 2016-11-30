@@ -52,13 +52,13 @@ $(document).ready(function() {
 	// showing work section
 	$("#right").click(function() {
 		if (homepage) {
-			$(".work").fadeIn();
 			$("#content").animate({opacity: 1}, 300);
-			$("#left").animate({width: '30%'}, 300);
+			$("#right").animate({width: '70%'}, 300);
 			$("#right .name").css("color", "white");
 			$("#rightcolor").animate({width: '100%'}, 300);
-			$("#right").animate({width: '70%'}, 300);
+			$("#left").animate({width: '30%'}, 300);
 			$(".title").fadeOut(); 
+			$(".work").fadeIn();
 			homepage = false
 		} else {
 			backtohome()
