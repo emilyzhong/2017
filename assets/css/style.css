@@ -127,7 +127,7 @@
 	color: #323232;
 }
 
-#design {
+.art {
 	color: white;
 	/*first thing that is shown*/
 }
@@ -136,7 +136,7 @@
 	display: none;
 }
 
-.art {
+.design {
 	display: none;
 }
 
@@ -283,7 +283,7 @@
 		text-shadow: 0px 0px 0px white;
 	}
 	to {
-		text-shadow: 0px 3px 1px #ffaa80;
+		text-shadow: 0px 3px 4px rgba(0, 0, 255, 0.3);
 	}
 }
 
@@ -335,6 +335,12 @@ a:hover {
 	color: rgb(255, 153, 102);
 	transition: 0.2s all;
 }
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 
 body, html {
 	width: 100%;
