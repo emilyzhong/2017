@@ -127,9 +127,10 @@
 	color: #323232;
 }
 
-.art {
-	display: block;
-	/*first thing that is shown*/
+
+#art {
+	color: white;
+	/*highlighting that default page is art on nav bar*/
 }
 
 .cs {
