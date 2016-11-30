@@ -7,13 +7,13 @@ $(document).ready(function() {
 		if (homepage) {
 			$("#left .name").css("color", "white");
 			$("#left .title").css("color", "white");
-			$("#leftcolor").animate({width: '100%'}, 300);
+			$("#leftcolor").animate({width: '100%'}, 200);
 		}
 	}, function() {
 		if (homepage) {
-			$("#leftcolor").animate({width: 0}, 300);
-			$("#left .name").css("color", "#323232");
-			$("#left .title").css("color", "#323232");
+			$("#leftcolor").stop(true).animate({width: 0}, 200);
+			$("#left .name").stop(true).css("color", "#323232");
+			$("#left .title").stop(true).css("color", "#323232");
 		}
 	});
 
@@ -21,13 +21,13 @@ $(document).ready(function() {
 		if (homepage) {
 			$("#right .name").css("color", "white");
 			$("#right .title").css("color", "white");
-			$("#rightcolor").animate({width: '100%'}, 300);
+			$("#rightcolor").animate({width: '100%'}, 200);
 		}
 	}, function() {
 		if (homepage) {
-			$("#rightcolor").animate({width: 0}, 300);
-			$("#right .name").css("color", "#323232");
-			$("#right .title").css("color", "#323232");
+			$("#rightcolor").stop(true).animate({width: 0}, 200);
+			$("#right .name").stop(true).css("color", "#323232");
+			$("#right .title").stop(true).css("color", "#323232");
 		}
 	});
 

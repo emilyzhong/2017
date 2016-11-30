@@ -101,7 +101,6 @@
 	right: 0;
     height: 100%;
     /*transform: translateX(-42%) translateY(-25%);*/
-    opacity: 0.8;
 }
 
 /* WORK SECTION */
@@ -326,6 +325,16 @@
 	color: white;
 }
 */
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(255, 153, 102);
+	transition: 0.2s all;
+}
 
 body, html {
 	width: 100%;
