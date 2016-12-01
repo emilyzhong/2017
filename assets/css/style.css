@@ -42,6 +42,10 @@
 	font-weight: 400;
 }
 
+.name:hover {
+	cursor: pointer;
+}
+
 #left .name {
 	right: 0;
 }
@@ -329,6 +333,11 @@
 
 a {
 	color: white;
+	text-decoration: none;
+}
+
+.textgroup a {
+	color: black;
 	text-decoration: none;
 }
 
