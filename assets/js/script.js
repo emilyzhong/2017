@@ -148,9 +148,17 @@ $(document).ready(function() {
 		$("#expandedimage").append('<img id="expanded" src="' + image + '">');
 		var img = document.getElementById('expanded')
 		if (img.height < img.width) {
-			$(img).width(700);
+			$(img).width($("#right").width() * 0.8);
+			if ($(img).height() > $("#right").height() * 0.8) {
+				$(img).height($("#right").height() * 0.8);
+				$(img).width("auto");
+			}
 		} else {
-			$(img).height(550);
+			$(img).height($("#right").height() * 0.8);
+			if ($(img).width() > $("#right").width() * 0.8) {
+				$(img).width($("#right").width() * 0.8)
+				$(img).height("auto")
+			}
 		}
 		
 		notexpanded = false

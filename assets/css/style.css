@@ -118,7 +118,7 @@
 #navbar {
 	position: absolute;
 	right: 30px;
-	top: 35px;
+	top: 32px;
 	font-size: 24px;
 	margin: 5px;
 }
@@ -272,6 +272,15 @@
 .mediums {
 	font-style: italic;
 	margin: 8px;
+}
+
+#right .cs {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translateX(50%) translateY(-50%);
+	color: white;
+	font-size: 48px;
 }
 
 /*OTHER STUFF*/
