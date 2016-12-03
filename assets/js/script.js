@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var homepage = true
-	
+
 	// hover effects on home page
 	$("#left").hover(function() {
 		if (homepage) {
@@ -125,6 +125,8 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 
+	// IMAGES
+
 	var notexpanded = true
 
 	$(".overlay").hover(function() {
@@ -138,6 +140,19 @@ $(document).ready(function() {
 			var num = $(this).attr('class').split(' ')[1]
 		}
 	});
+
+	// $(".picture" ).each(function () {
+ //        var imgwidth = $(this).width();
+ //        var imgheight = $(this).height();
+ //        if (imgwidth > imgheight) {
+ //            $(this).css('width', '100%');
+ //            $(this).css('height', 'auto');
+ //        }
+ //        else if (imgwidth < imgheight) {
+ //                $(this).css('width', 'auto');
+ //                $(this).css('height', '100%');
+ //            }
+ //    });
 
 	$(".picturetile").click(function() {
 		var num = $(this).children(':nth-child(1)').attr('class').split(' ')[1]
