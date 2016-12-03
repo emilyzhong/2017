@@ -164,7 +164,7 @@ $(document).ready(function() {
 		$("#expandoverlay").fadeIn();
 		$("#expandedimage").append('<img id="expanded" src="' + image + '">');
 		if (link) {
-			$("#expanded").wrap('<a href="${link}" target="_blank"></a>');
+			$("#expanded").wrap('<a href="'+link+'" target="_blank"></a>');
 		}
 		var img = document.getElementById('expanded')
 		if (img.height < img.width) {
