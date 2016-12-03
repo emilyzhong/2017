@@ -158,9 +158,14 @@ $(document).ready(function() {
 		var num = $(this).children(':nth-child(1)').attr('class').split(' ')[1]
 		console.log(num);
 		var image = $(this).children(':nth-child(2)').attr('src')
+		var link = $(this).children(':nth-child(3)').attr('href')
+		console.log(link);
 		$("." + num).fadeIn();
 		$("#expandoverlay").fadeIn();
 		$("#expandedimage").append('<img id="expanded" src="' + image + '">');
+		if (link) {
+			$("#expanded").wrap('<a href="${link}" target="_blank"></a>');
+		}
 		var img = document.getElementById('expanded')
 		if (img.height < img.width) {
 			$(img).width($("#right").width() * 0.8);
