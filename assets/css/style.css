@@ -117,7 +117,7 @@
 
 #navbar {
 	position: absolute;
-	right: 30px;
+	right: 40px;
 	top: 32px;
 	font-size: 24px;
 	margin: 5px;
@@ -132,16 +132,16 @@
 }
 
 
-#art {
+#design {
 	color: white;
-	/*highlighting that default page is art on nav bar*/
+	/*highlighting that default page is design on nav bar*/
 }
 
 .cs {
 	display: none;
 }
 
-.design {
+.art {
 	display: none;
 }
 
@@ -156,11 +156,11 @@
 }
 
 .picturetile {
-	width: calc(50% - 7px);
-	height: calc(100%/2 - 10px);
+	width: calc(50% - 30px);
+	height: calc(100%/2 - 30px);
 	display: inline-block;
 	overflow: hidden;
-	margin: 2px;
+	margin: 10px;
 	background-color: black;
 }
 
@@ -210,8 +210,8 @@
 }
 
 .overlay {
-	width: calc(50% - 7px);
-	height: calc(100%/2 - 10px);
+	width: calc(50% - 30px);
+	height: calc(100%/2 - 30px);
 	background-color: rgba(0, 0, 0, 0.6);
 	position: absolute;
 	opacity: 1;
@@ -264,6 +264,11 @@
 	display: none;
 }
 
+.behance {
+	display: none;
+	font-style: italic;
+}
+
 .descriptitle {
 	font-size: 24px;
 	font-weight: 400;
@@ -284,7 +289,7 @@
 }
 
 /*OTHER STUFF*/
-.lo {
+/*.lo {
 	animation: turnOrange 0.5s both;
 	animation-delay: 0.5s;
 	color: white;
@@ -308,7 +313,7 @@
 	to {
 		opacity: 0.9;
 	}
-}
+}*/
 
 /*@keyframes fadeInspesh {
 	from {

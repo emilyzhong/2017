@@ -59,6 +59,21 @@ $(document).ready(function() {
 			$("#left").animate({width: '30%'}, 300);
 			$(".title").fadeOut(); 
 			$(".work").fadeIn();
+
+			// $(".picture").each(function() {
+			// 	if ($(this).height < $(this).width) {
+			// 		$(this).css("width", "100%");
+			// 		if ($(this).height() > $(".picturetile").height()) {
+			// 			$(this).css("height", "100%");
+			// 			$(this).css("width", "auto");
+			// 		}
+			// 	} else {
+			// 		$(this).css("height", "100%");
+			// 		if ($(this).width() < $(".picturetile").width()) {
+			// 			$(this).css("width", "200%");
+			// 			$(this).css("height", "auto");
+			// 		}
+			// }})
 			homepage = false
 		} else {
 			backtohome()
@@ -155,6 +170,7 @@ $(document).ready(function() {
  //    });
 
 	$(".picturetile").click(function() {
+		$(".behance").fadeIn()
 		var num = $(this).children(':nth-child(1)').attr('class').split(' ')[1]
 		console.log(num);
 		var image = $(this).children(':nth-child(2)').attr('src')
@@ -188,6 +204,7 @@ $(document).ready(function() {
 		$("#expandedimage").empty();
 		$("#expandoverlay").fadeOut();
 		$(".textgroup").fadeOut();
+		$(".behance").fadeOut()
 		$(".overlay").animate({opacity: 1}, 300);
 		event.stopPropagation();
 		notexpanded = true
