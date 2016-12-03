@@ -289,7 +289,7 @@
 }
 
 /*OTHER STUFF*/
-/*.lo {
+.lo {
 	animation: turnOrange 0.5s both;
 	animation-delay: 0.5s;
 	color: white;
@@ -313,7 +313,7 @@
 	to {
 		opacity: 0.9;
 	}
-}*/
+}
 
 /*@keyframes fadeInspesh {
 	from {
