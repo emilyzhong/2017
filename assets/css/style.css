@@ -372,3 +372,78 @@ body, html {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 }
+
+@media(max-width: 991px) {
+	#about-textcontainer {
+		font-size: 12px;
+		width: 90%;
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	#texttitle {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	#navbar {
+	position: fixed;
+	top: 24px;
+	right: 0px;
+	width: 100%;
+	text-align: center;
+	}
+
+	.navitem {
+	display: inline-block;
+	padding: 5px 0px;
+	cursor: pointer;
+	color: #323232;
+	font-size: 24px;
+	}
+
+	/*.overlay {
+		display: None;
+	}*/
+
+	.picturetile {
+	width: 100%;
+	height: calc(100%/3 - 30px);
+	overflow: hidden;
+	margin: 5px;
+	background-color: black;
+	right: 50%;
+	}
+
+	.overlay {
+	width: calc(50% - 30px);
+	height: calc(100%/3 - 30px);
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	opacity: 1;
+	display: block;
+	z-index: 1;
+	}
+
+	.picturecontainer {
+	width: 80%;
+	height: calc(100% - 90px);
+	position: absolute;
+	top: 85px;
+	right: 50%;
+	transform: translateX(50%);
+	overflow: scroll;
+	}
+
+	.arttitle {
+		font-size: 12px;
+		text-align: center;
+		border: black 0px solid;
+	}
+
+	.work {
+		text-align: center;
+	}
+
+}

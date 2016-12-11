@@ -3,94 +3,121 @@ $(document).ready(function() {
 	var homepage = true
 
 	// hover effects on home page
-	$("#left").hover(function() {
-		if (homepage) {
-			$("#left .name").css("color", "white");
-			$("#left .title").css("color", "white");
-			$("#leftcolor").animate({width: '100%'}, 200);
-		}
-	}, function() {
-		if (homepage) {
-			$("#leftcolor").stop(true).animate({width: 0}, 200);
-			$("#left .name").stop(true).css("color", "#323232");
-			$("#left .title").stop(true).css("color", "#323232");
-		}
-	});
+	// 991 px for tablets, phones: no hover effect
+	if ( $(window).width() > 991) {
+		$("#left").hover(function() {
+			if (homepage) {
+				$("#left .name").css("color", "white");
+				$("#left .title").css("color", "white");
+				$("#leftcolor").animate({width: '100%'}, 200);
+			}
+		}, function() {
+			if (homepage) {
+				$("#leftcolor").stop(true).animate({width: 0}, 200);
+				$("#left .name").stop(true).css("color", "#323232");
+				$("#left .title").stop(true).css("color", "#323232");
+			}
+		});
 
-	$("#right").hover(function() {
-		if (homepage) {
-			$("#right .name").css("color", "white");
-			$("#right .title").css("color", "white");
-			$("#rightcolor").animate({width: '100%'}, 200);
-		}
-	}, function() {
-		if (homepage) {
-			$("#rightcolor").stop(true).animate({width: 0}, 200);
-			$("#right .name").stop(true).css("color", "#323232");
-			$("#right .title").stop(true).css("color", "#323232");
-		}
-	});
+		$("#right").hover(function() {
+			if (homepage) {
+				$("#right .name").css("color", "white");
+				$("#right .title").css("color", "white");
+				$("#rightcolor").animate({width: '100%'}, 200);
+			}
+		}, function() {
+			if (homepage) {
+				$("#rightcolor").stop(true).animate({width: 0}, 200);
+				$("#right .name").stop(true).css("color", "#323232");
+				$("#right .title").stop(true).css("color", "#323232");
+			}
+		});
+	}
 
 	// CLICK EFFECTS ON HOME PAGE:
 	//showing about section
-	$("#left").click(function() {
-		if (homepage) {
-			$("#content").animate({opacity: 1}, 300);
-			$("#left").animate({width: '70%'}, 300);
-			$("#left .name").css("color", "white");
-			$("#left .aboutsection").css("color", "white");
-			$("#leftcolor").animate({width: '100%'}, 300);
-			$("#right").animate({width: '30%'}, 300);
-			$(".title").fadeOut();
-			$(".aboutsection").fadeIn();
-			homepage = false
-		} else {
-			backtohome()
-		}
-	})
+	if ( $(window).width() > 991) {
+		$("#left").click(function() {
+			if (homepage) {
+				$("#content").animate({opacity: 1}, 300);
+				$("#left").animate({width: '70%'}, 300);
+				$("#left .name").css("color", "white");
+				$("#left .aboutsection").css("color", "white");
+				$("#leftcolor").animate({width: '100%'}, 300);
+				$("#right").animate({width: '30%'}, 300);
+				$(".title").fadeOut();
+				$(".aboutsection").fadeIn();
+				homepage = false
+			} else {
+				backtohome()
+			}
+		})
 
-	// showing work section
-	$("#right").click(function() {
-		if (homepage) {
-			$("#content").animate({opacity: 1}, 300);
-			$("#right").animate({width: '70%'}, 300);
-			$("#right .name").css("color", "white");
-			$("#rightcolor").animate({width: '100%'}, 300);
-			$("#left").animate({width: '30%'}, 300);
-			$(".title").fadeOut(); 
-			$(".work").fadeIn();
+		// showing work section
+		$("#right").click(function() {
+			if (homepage) {
+				$("#content").animate({opacity: 1}, 300);
+				$("#right").animate({width: '70%'}, 300);
+				$("#right .name").css("color", "white");
+				$("#rightcolor").animate({width: '100%'}, 300);
+				$("#left").animate({width: '30%'}, 300);
+				$(".title").fadeOut(); 
+				$(".work").fadeIn();
+				homepage = false
+			} else {
+				backtohome()
+			}
+		})
+	} else {
+		$("#left").click(function() {
+			if (homepage) {
+				$("#content").animate({opacity: 1}, 300);
+				$("#left").animate({width: '100%'}, 300);
+				$(".name").fadeOut();
+				$("#right").fadeOut()
+				$("#left .aboutsection").css("color", "white");
+				$("#leftcolor").animate({width: '100%'}, 300);
+				$("#right").animate({width: '0%'}, 300);
+				$(".title").fadeOut();
+				$(".aboutsection").fadeIn();
+				console.log("mobile-left click")
+				homepage = false
+			} else {
+				backtohome()
+			}
+		})
 
-			// $(".picture").each(function() {
-			// 	if ($(this).height < $(this).width) {
-			// 		$(this).css("width", "100%");
-			// 		if ($(this).height() > $(".picturetile").height()) {
-			// 			$(this).css("height", "100%");
-			// 			$(this).css("width", "auto");
-			// 		}
-			// 	} else {
-			// 		$(this).css("height", "100%");
-			// 		if ($(this).width() < $(".picturetile").width()) {
-			// 			$(this).css("width", "200%");
-			// 			$(this).css("height", "auto");
-			// 		}
-			// }})
-			homepage = false
-		} else {
-			backtohome()
-		}
-	})
+		// showing work section
+		$("#right").click(function() {
+			if (homepage) {
+				$("#content").animate({opacity: 1}, 300);
+				$("#right").animate({width: '100%'}, 300);
+				$(".name").fadeOut();
+				$("#rightcolor").animate({width: '100%'}, 300);
+				$("#left").animate({width: '0%'}, 300);
+				$("#left").fadeOut();
+				$(".title").fadeOut(); 
+				$(".work").fadeIn();
+				console.log("mobile-right click")
+				homepage = false
+			} else {
+				backtohome()
+			}
+		})
+	 }
 
-	$('.aboutsection').click(function(event){
-    	event.stopPropagation();
- 	});
+		$('.aboutsection').click(function(event){
+	    	event.stopPropagation();
+	 	});
 
-	$('.picturecontainer').click(function(event){
-    	event.stopPropagation();
- 	});
+		$('.picturecontainer').click(function(event){
+	    	event.stopPropagation();
+	 	});
 
- 	$('.textcontainer').click(function(event){
-    	event.stopPropagation();
- 	});
+	 	$('.textcontainer').click(function(event){
+	    	event.stopPropagation();
+	 	});
+
 
 	function backtohome() {
 		$("#content").animate({opacity: 0.8}, 300);
@@ -99,8 +126,11 @@ $(document).ready(function() {
 		$(".title").fadeIn();
 		$("#right").animate({width: '50%'}, 300);
 		$("#left").animate({width: '50%'}, 300);
+		$("#left").fadeIn()
+		$("#right").fadeIn()
 		$("#rightcolor").animate({width: 0}, 300);
 		$("#leftcolor").animate({width: 0}, 300);
+		$(".name").fadeIn();
 		$(".name").css("color", "#323232");
 		$(".title").css("color", "#323232");
 		homepage = true	
@@ -143,31 +173,20 @@ $(document).ready(function() {
 	// IMAGES
 
 	var notexpanded = true
-
-	$(".overlay").hover(function() {
-		$(this).animate({opacity: 0}, 300);
-		var num = $(this).attr('class').split(' ')[1]
-		$("." + num).fadeIn()
-	}, function() {
-		if (notexpanded) {
-			$(".textgroup").css("display", "none");
-			$(this).animate({opacity: 1}, 300);
+	if ( $(window).width() > 991) {
+		$(".overlay").hover(function() {
+			$(this).animate({opacity: 0}, 300);
 			var num = $(this).attr('class').split(' ')[1]
-		}
-	});
+			$("." + num).fadeIn()
+		}, function() {
+			if (notexpanded) {
+				$(".textgroup").css("display", "none");
+				$(this).animate({opacity: 1}, 300);
+				var num = $(this).attr('class').split(' ')[1]
+			}
+		});
+	}
 
-	// $(".picture" ).each(function () {
- //        var imgwidth = $(this).width();
- //        var imgheight = $(this).height();
- //        if (imgwidth > imgheight) {
- //            $(this).css('width', '100%');
- //            $(this).css('height', 'auto');
- //        }
- //        else if (imgwidth < imgheight) {
- //                $(this).css('width', 'auto');
- //                $(this).css('height', '100%');
- //            }
- //    });
 
 	$(".picturetile").click(function() {
 		$(".behance").fadeIn()
