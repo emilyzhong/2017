@@ -375,7 +375,7 @@ body, html {
 
 @media(max-width: 991px) {
 	#about-textcontainer {
-		font-size: 12px;
+		font-size: 14px;
 		width: 90%;
 		text-align: center;
 		top: 50%;
@@ -392,12 +392,14 @@ body, html {
 	top: 24px;
 	right: 0px;
 	width: 100%;
+	height: 0px;
 	text-align: center;
 	}
 
 	.navitem {
 	display: inline-block;
-	padding: 5px 0px;
+	padding: 5px 3px;
+	margin: 0px 5px;
 	cursor: pointer;
 	color: #323232;
 	font-size: 24px;
@@ -437,6 +439,7 @@ body, html {
 	}
 
 	.arttitle {
+		width: 90%;
 		font-size: 12px;
 		text-align: center;
 		border: black 0px solid;

@@ -74,7 +74,7 @@ $(document).ready(function() {
 				$("#content").animate({opacity: 1}, 300);
 				$("#left").animate({width: '100%'}, 300);
 				$(".name").fadeOut();
-				$("#right").fadeOut()
+				$("#right").fadeOut();
 				$("#left .aboutsection").css("color", "white");
 				$("#leftcolor").animate({width: '100%'}, 300);
 				$("#right").animate({width: '0%'}, 300);
@@ -95,7 +95,6 @@ $(document).ready(function() {
 				$(".name").fadeOut();
 				$("#rightcolor").animate({width: '100%'}, 300);
 				$("#left").animate({width: '0%'}, 300);
-				$("#left").fadeOut();
 				$(".title").fadeOut(); 
 				$(".work").fadeIn();
 				console.log("mobile-right click")
