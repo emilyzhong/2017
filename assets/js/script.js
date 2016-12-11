@@ -80,6 +80,7 @@ $(document).ready(function() {
 				$("#right").animate({width: '0%'}, 300);
 				$(".title").fadeOut();
 				$(".aboutsection").fadeIn();
+				$("#left .mobilenav").fadeIn();
 				console.log("mobile-left click")
 				homepage = false
 			} else {
@@ -97,6 +98,7 @@ $(document).ready(function() {
 				$("#left").animate({width: '0%'}, 300);
 				$(".title").fadeOut(); 
 				$(".work").fadeIn();
+				$("#right .mobilenav").fadeIn();
 				console.log("mobile-right click")
 				homepage = false
 			} else {
@@ -132,6 +134,7 @@ $(document).ready(function() {
 		$(".name").fadeIn();
 		$(".name").css("color", "#323232");
 		$(".title").css("color", "#323232");
+		$(".mobilenav").fadeOut();
 		homepage = true	
 	}
 

@@ -363,6 +363,9 @@ a:hover {
     display: none; 
 }
 
+.mobilenav {
+	display: none;
+}
 
 body, html {
 	width: 100%;
@@ -374,6 +377,23 @@ body, html {
 }
 
 @media(max-width: 991px) {
+	.mobilenav {
+		position: fixed;
+		display: block;
+		font-size: 30px;
+		color: white;
+		top: 20px;
+	}
+
+	#right .mobilenav {
+		left: 15px;
+		top: 30px;
+	}
+
+	#left .mobilenav {
+		right: 15px;
+	}
+
 	#about-textcontainer {
 		font-size: 14px;
 		width: 90%;
