@@ -192,6 +192,7 @@ $(document).ready(function() {
 
 	$(".picturetile").click(function() {
 		$(".behance").fadeIn()
+		$(".textcontainer").fadeIn()
 		var num = $(this).children(':nth-child(1)').attr('class').split(' ')[1]
 		console.log(num);
 		var image = $(this).children(':nth-child(2)').attr('src')
@@ -225,6 +226,9 @@ $(document).ready(function() {
 		$("#expandedimage").empty();
 		$("#expandoverlay").fadeOut();
 		$(".textgroup").fadeOut();
+		if ($(window).width() <= 991) {
+			$(".textcontainer").fadeOut();
+		}
 		$(".behance").fadeOut()
 		$(".overlay").animate({opacity: 1}, 300);
 		event.stopPropagation();

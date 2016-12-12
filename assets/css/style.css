@@ -470,6 +470,7 @@ body, html {
 	}
 
 	.textcontainer {
+		display: none;
 		position: fixed;
 		margin: 0 auto;
 		height: 100px;
