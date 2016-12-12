@@ -469,4 +469,28 @@ body, html {
 		text-align: center;
 	}
 
+	.textcontainer {
+		position: fixed;
+		margin: 0 auto;
+		height: 100px;
+		width: 90%;
+		top: calc(100% - 90px);
+		color: white;
+		z-index: 10;
+		overflow: scroll;
+	}
+
+	.textgroup {
+		top: 0;
+		position: absolute;
+		font-size: 12px;
+		text-align: center;
+		left: 50%;
+		width: inherit;
+		transform: translateX(-50%);
+	}
+
+	.descriptitle {
+		font-size: 14px;
+	}
 }
