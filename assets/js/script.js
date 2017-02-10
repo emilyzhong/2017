@@ -63,9 +63,9 @@ $(document).ready(function() {
 				$("#left").animate({width: '30%'}, 300);
 				$(".title").fadeOut(); 
 				$(".work").fadeIn();
-				homepage = false
+				homepage = false;
 			} else {
-				backtohome()
+				backtohome();
 			}
 		})
 	} else {
