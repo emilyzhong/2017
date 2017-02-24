@@ -1,4 +1,3 @@
-
 #content {
 /*	animation: fadeIn 1.5s both;
 	animation-delay: 2s;*/
@@ -72,12 +71,12 @@
 	display: none;
 }
 
-#about-textcontainer {
+#left .aboutsection {
 	position: absolute;
 	width: 500px;
 	height: auto;
 	right: 0;
-	top: 70%;
+	top: 60%;
 	transform: translateY(-50%);
 	text-align: right;
 	font-size: 18px;
@@ -94,7 +93,7 @@
 }
 
 
-#about-picturecontainer {
+#right .aboutsection {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -365,6 +364,21 @@ a:hover {
 
 .mobilenav {
 	display: none;
+}
+
+ul {
+	list-style-type: none;
+	margin: -2px 0px 0px 0px;
+	font-size: 18px;
+}
+
+li {
+	text-shadow: none;
+	transition: 0.2s all;
+}
+
+li:hover {
+	text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body, html {
