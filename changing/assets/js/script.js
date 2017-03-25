@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	// 991 px for tablets, phones: no hover effect
+	$(function() {
+  		$('#container').smoothState();
+	});
+
 	if ( $(window).width() > 991) {
 		$("#left").hover(function() {
 			$("#leftcolor").removeClass('unhover').addClass('hover');

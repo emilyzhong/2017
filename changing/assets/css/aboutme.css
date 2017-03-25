@@ -14,27 +14,41 @@
 }
 
 @keyframes leftShift {
-	0% {width: 50%;}
-	100% {width: 70%;}
+	0% {width: 50%;
+		opacity: 0.8;
+		color: rgba(255, 255, 255, 0);}
+	100% {width: 70%;
+		opacity: 1;
+		color: rgba(255, 255, 255, 1);}
 }
 
 @keyframes rightShift {
-	0% {width: 50%;
-		opacity: 0;}
-	100% {width: 30%;
-		opacity: 1;}
+	0% {width: 50%;}
+	100% {width: 30%;}
 }
 
 #left {
 	width: 50%;
+	color: rgba(255, 255, 255, 0);
+	opacity: 0.8;
 	animation: 0.2s leftShift;
 	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+	/*animation-delay: 0.1s;*/
 }
 
 #right {
 	width: 50%;
-	opacity: 0;
 	animation: 0.2s rightShift;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+	/*animation-delay: 0.1s*/
+}
+
+#me-picture {
+	opacity: 0;
+	animation: 0.5s fadeIn;
+	/*animation-delay: 0.1s;*/
 	animation-fill-mode: forwards;
 }
 
@@ -77,6 +91,7 @@
 
 #right .name {
 	left: 0;
+	color: black;
 }
 
 .title {
@@ -85,7 +100,20 @@
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	font-size: 36px;
-	display: none;
+	opacity: 1;
+	animation: 0.3s fadeOut;
+	/*animation-delay: 0.1s;*/
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+	0% { opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 #left .aboutsection {
@@ -99,7 +127,6 @@
 	font-size: 18px;
 	padding: 10px;
 	line-height: 1.5em;
-	color: white;
 }
 
 #texttitle {
@@ -127,28 +154,26 @@
 
 /*OTHER STUFF*/
 .lo {
-	animation: turnOrange 0.5s both;
-	animation-delay: 0.5s;
+	animation: blueShadow 0.5s both;
+	/*animation-delay: 0.1s;*/
+	animation-fill-mode: forwards;
+	opacity: 0;
 	color: white;
 	font-weight: 400;
 	text-shadow: 0px 0px 0px white;
 }
 
-@keyframes turnOrange {
-	from {
+@keyframes blueShadow {
+	0% {
+		opacity: 0;
 		text-shadow: 0px 0px 0px white;
 	}
-	to {
+	50% {opacity: 1;
+		text-shadow: 0px 0px 0px white;
+	}
+	100% {
+		opacity: 1;
 		text-shadow: 0px 3px 4px rgba(0, 0, 255, 0.3);
-	}
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 0.9;
 	}
 }
 
