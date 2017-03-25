@@ -1,6 +1,4 @@
 #content {
-/*	animation: fadeIn 1.5s both;
-	animation-delay: 2s;*/
 	height: 100%;
 	overflow: hidden;
 	opacity: 1;
@@ -11,6 +9,40 @@
 	position: relative;
 	/*border: red 1px solid;*/
 	float: left;
+}
+
+#left {
+	width: 50%;
+	color: rgba(255, 255, 255, 0);
+	opacity: 0.8;
+}
+
+#right {
+	width: 50%;
+}
+
+.leftShift {
+	animation: 0.2s leftShift;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+}
+
+.rightShift {
+	animation: 0.2s rightShift;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+}
+
+.rightReturn {
+	animation: 0.2s rightReturn;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+}
+
+.leftReturn {
+	animation: 0.2s leftReturn;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
 }
 
 @keyframes leftShift {
@@ -27,35 +59,35 @@
 	100% {width: 30%;}
 }
 
-#left {
-	width: 50%;
-	color: rgba(255, 255, 255, 0);
-	opacity: 0.8;
-	animation: 0.2s leftShift;
-	animation-fill-mode: forwards;
-	transition-timing-function: ease-in;
-	/*animation-delay: 0.1s;*/
+@keyframes rightReturn {
+	0% {width: 30%;}
+	100% {width: 50%;}
 }
 
-#right {
-	width: 50%;
-	animation: 0.2s rightShift;
-	animation-fill-mode: forwards;
-	transition-timing-function: ease-in;
-	/*animation-delay: 0.1s*/
+@keyframes leftReturn {
+	0% {width: 70%;}
+	100% {width: 50%;}
 }
 
 #me-picture {
 	opacity: 0;
-	animation: 0.5s fadeIn;
-	/*animation-delay: 0.1s;*/
-	animation-fill-mode: forwards;
+	
 }
 
 .color {
 	width: 0;
 	height: 100%;
 	z-index: -1;
+}
+
+@keyframes returnColor {
+	0% { width: 100%; }
+	100% {width: 0%;}
+}
+
+.returnColor {
+	animation: 0.2s returnColor;
+	animation-fill-mode: forwards;
 }
 
 #leftcolor {
@@ -101,8 +133,25 @@
 	transform: translateX(-50%) translateY(-50%);
 	font-size: 36px;
 	opacity: 1;
+}
+
+.fadeOut {
 	animation: 0.3s fadeOut;
-	/*animation-delay: 0.1s;*/
+	animation-fill-mode: forwards;
+}
+
+.fadeIn {
+	animation: 0.5s fadeIn;
+	animation-fill-mode: forwards;
+}
+
+.fastFadeIn {
+	animation: 0.2s fadeIn;
+	animation-fill-mode: forwards;
+}
+
+.fastFadeOut {
+	animation: 0.2s fadeOut;
 	animation-fill-mode: forwards;
 }
 
@@ -148,19 +197,20 @@
 	position: relative;
 	right: 0;
     height: 100%;
-    /*transform: translateX(-42%) translateY(-25%);*/
 }
 
 
 /*OTHER STUFF*/
 .lo {
-	animation: blueShadow 0.5s both;
-	/*animation-delay: 0.1s;*/
-	animation-fill-mode: forwards;
 	opacity: 0;
 	color: white;
 	font-weight: 400;
 	text-shadow: 0px 0px 0px white;
+}
+
+.blueShadow {
+	animation: blueShadow 0.5s both;
+	animation-fill-mode: forwards;
 }
 
 @keyframes blueShadow {
@@ -176,36 +226,6 @@
 		text-shadow: 0px 3px 4px rgba(0, 0, 255, 0.3);
 	}
 }
-
-/*@keyframes fadeInspesh {
-	from {
-		color: white;
-	}
-	to {
-		color: #323232;
-	}
-}
-
-@keyframes fadeOut {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}
-
-#welcome {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	font-size: 48px;
-	animation: fadeInspesh 2s, fadeOut 2s 1s;
-	opacity: 1;
-	color: white;
-}
-*/
 
 a {
 	color: inherit;
@@ -243,7 +263,6 @@ body, html {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	/*font-family: 'Montserrat', sans-serif;*/
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 }
