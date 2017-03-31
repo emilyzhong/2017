@@ -16,7 +16,6 @@ $(document).ready(function() {
 			backtohome()
 		})
 
-		// showing work section
 		$("#right").click(function() {
 			backtohome();
 		})

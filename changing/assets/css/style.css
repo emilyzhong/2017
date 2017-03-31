@@ -42,6 +42,37 @@
 	}
 }
 
+.leftShift {
+	animation: 0.2s leftShift;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+}
+
+.rightShift {
+	animation: 0.2s rightShift;
+	animation-fill-mode: forwards;
+	transition-timing-function: ease-in;
+}
+
+.fadeOut {
+	animation: 0.3s fadeOut;
+	animation-fill-mode: forwards;
+}
+
+@keyframes rightShift {
+	0% {width: 50%;
+		opacity: 0.8;
+		color: rgba(255, 255, 255, 0);}
+	100% {width: 70%;
+		opacity: 1;
+		color: rgba(255, 255, 255, 1);}
+}
+
+@keyframes leftShift {
+	0% {width: 50%;}
+	100% {width: 30%;}
+}
+
 .color {
 	width: 0;
 	height: 100%;
@@ -98,15 +129,6 @@
 	display: none;
 }
 
-/*@keyframes fadeOut {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}*/
-
 a {
 	color: inherit;
 	text-decoration: none;
@@ -115,8 +137,9 @@ a {
 	transition: 0.2s all;
 }
 
-a:hover {
+.half:hover {
 	color: white;
+	cursor: pointer;
 }
 
 body, html {
