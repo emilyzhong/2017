@@ -411,6 +411,7 @@ body, html {
 
 	.work {
 		text-align: center;
+		display: none;
 	}
 
 	.textcontainer {

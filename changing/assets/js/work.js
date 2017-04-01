@@ -5,9 +5,7 @@ $(document).ready(function() {
 	});
 
 	window.onload = function() {
-		$("#left").addClass("leftShift");
-		$("#right").addClass("rightShift");
-		$(".title").addClass("fadeOut");
+		$(".work").fadeIn();
 	}
 
 	if ( $(window).width() > 991) {
@@ -32,16 +30,12 @@ $(document).ready(function() {
 	function backtohome() {
 		$("#left").removeClass("leftShift");
 		$("#right").removeClass("rightShift");
-		$("#me-picture").removeClass("fadeIn");
-		$(".title").removeClass("fadeOut");
-		$(".lo").removeClass("blueShadow");
 
 		$("#rightcolor").addClass("returnColor");
 		$("#left").addClass("leftReturn");
 		$("#right").addClass("rightReturn");
-		$("#me-picture").addClass("fastFadeOut");
 		$(".title").addClass("fastFadeIn");
-		$(".lo").addClass("fastFadeOut");
+		$(".work").fadeOut();
 		setTimeout(function() {window.location.href='index.html'}, 200);
 	}
 
