@@ -7,6 +7,7 @@ $(document).ready(function() {
 	if ( $(window).width() > 991) {
 		$("#left").hover(function() {
 			if (homepage) {
+				console.log("LEFT HOVER");
 				$("#left .name").css("color", "white");
 				$("#left .title").css("color", "white");
 				$("#leftcolor").animate({width: '100%'}, 200);
