@@ -36,7 +36,7 @@ img {
 }
 
 body {
-	overflow: none;
+	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
 	background-color: rgb(153, 204, 255);
