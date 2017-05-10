@@ -291,6 +291,7 @@ a {
 	overflow: hidden;
 	text-align: center;
 	padding: 30px 10px;
+	color: black;
 }
 
 .textgroup {
@@ -305,6 +306,7 @@ a {
 .descriptitle {
 	font-size: 24px;
 	font-weight: 400;
+	margin-bottom: 5px;
 }
 
 .mediums {
@@ -328,6 +330,14 @@ a {
 
 .mobilenav {
 	display: none;
+}
+
+#sole-message {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	font-size: 48px;
 }
 
 body, html {

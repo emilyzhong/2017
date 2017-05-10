@@ -43,21 +43,21 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 
-	// IMAGES
-	// var notexpanded = true
-	// if ( $(window).width() > 991) {
-	// 	$(".overlay").hover(function() {
-	// 		$(this).animate({opacity: 0}, 300);
-	// 		var num = $(this).attr('class').split(' ')[1]
-	// 		$("." + num).fadeIn()
-	// 	}, function() {
-	// 		if (notexpanded) {
-	// 			$(".textgroup").css("display", "none");
-	// 			$(this).animate({opacity: 1}, 300);
-	// 			var num = $(this).attr('class').split(' ')[1]
-	// 		}
-	// 	});
-	// }
+	var notexpanded = true
+	if ( $(window).width() > 991) {
+		$(".overlay").hover(function() {
+			$(this).animate({opacity: 0}, 300);
+			var num = $(this).attr('class').split(' ')[1]
+			$("." + num).fadeIn()
+			console.log(num);
+		}, function() {
+			if (notexpanded) {
+				$(".textgroup").css("display", "none");
+				$(this).animate({opacity: 1}, 300);
+				var num = $(this).attr('class').split(' ')[1]
+			}
+		});
+	}
 
 
 	// $(".picturetile").click(function() {
