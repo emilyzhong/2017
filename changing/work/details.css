@@ -1,0 +1,136 @@
+.half {
+	position: absolute;
+	height: 100%;
+	/*border: red 1px solid;*/
+	top: 0;
+	z-index: -1;
+}
+
+/* LEFT SIDE: TEXT */
+
+#left {
+	width: 30%;
+	left: 0;
+}
+
+#title {
+	font-size: 21px;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 2px;
+}
+
+#subheadline {
+	font-style: italic;
+	font-size: 16px;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.text {
+	text-align: center;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+
+#text-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	width: 80%;
+	overflow: scroll;
+}
+
+.fadeIn {
+	animation: fadeIn;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from: {opacity: 0;}
+	to: {opacity: 1;}
+}
+
+
+/*RIGHT SIDE: IMAGES*/
+
+#right {
+	left: 30vw;
+	top: 0;
+	background-color: rgb(255, 153, 102);
+	width: calc(70vw + 100vh);
+	/*overflow: hidden;*/
+	height: calc(70vw + 100vh);
+	/*transform: rotate(180deg);*/
+}
+
+
+.image {
+	/*"100%" is actually 50%; scaled to larger "strip", similar to carousel*/
+	height: 80vh;
+	width: 80vh;
+	width: 1px;
+	position: absolute;
+}
+
+.image img {
+	position: absolute;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.image.one {
+	top: 50vh;
+	left: 35vw;
+	transform: translateY(-50%);
+}
+
+
+.image.two {
+	position: absolute;
+	bottom: 35vw;
+	left: 50vh;
+	transform: translateX(-50%) translateY(50%) rotate(-90deg);
+}
+
+.image.three {
+	position: absolute;
+	bottom: 50vh;
+	right: 35vw;
+	transform: translateX(-50%) translateY(50%) rotate(180deg);
+}
+
+.image.four {
+	position: absolute;
+	top: 35vw;
+	right: 50vh;
+	transform: translateX(50%) translateY(-50%) rotate(-270deg);
+}
+
+
+a {
+	text-decoration: none;
+	color: black;
+	transition: 0.2s all;
+}
+
+a:hover {
+	color: rgb(255, 153, 102);
+}
+
+body {
+	position: absolute;
+	margin: 0 auto;
+	font-family: Lato;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
