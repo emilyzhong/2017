@@ -44,17 +44,6 @@
 	overflow: scroll;
 }
 
-.fadeIn {
-	animation: fadeIn;
-	animation-duration: 0.3s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes fadeIn {
-	from: {opacity: 0;}
-	to: {opacity: 1;}
-}
-
 
 /*RIGHT SIDE: IMAGES*/
 
@@ -113,6 +102,41 @@
 	transform: translateX(50%) translateY(-50%) rotate(-270deg);
 }
 
+/*OTHER*/
+.name {
+	position: absolute;
+	margin: 5px;
+	font-size: 48px;
+	top: 20px;
+	z-index: 3;
+	font-weight: 400;
+}
+
+.name:hover {
+	cursor: pointer;
+}
+
+#left .name {
+	right: 0;
+	color: black;
+}
+
+#titlething .name {
+	left: 0;
+	color: white;
+}
+
+#titlething {
+	position: absolute;
+	height: 100vh;
+	width: 70vw;
+	right: 0px;
+	z-index: 10;
+}
+
+.mobilenav {
+	display: none;
+}
 
 a {
 	text-decoration: none;

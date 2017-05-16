@@ -60,6 +60,10 @@ $(document).ready(function() {
 	}
 
 
+	$(".picturetile").click(function() {
+		var link = $(this).children(':nth-child(3)').attr('href');
+		window.location.href = link;
+	})
 	// $(".picturetile").click(function() {
 	// 	$(".behance").fadeIn()
 	// 	$(".textcontainer").fadeIn()

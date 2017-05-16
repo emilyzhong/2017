@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var pause = 0
+	var pause = 50;
 	var degrees = 0;
 	var opacity = 1;
 	$(".text.two, .text.three, .text.four").css({
@@ -7,35 +7,42 @@ $(document).ready(function(){
 	});
 
 	$(window).on('wheel', function() {
-		console.log(degrees);
-		if (degrees % 90 == 0) {
-			console.log("pause");
-			pause += 1;
+		if (degrees > 357) {
+			$(".text.two, .text.three, .text.four").css({
+			'display': 'none',
+			'opacity': 1
+			});
 		}
 
-		if (pause == 35) {
+		if (degrees % 90 == 0) {
+			pause += 1;
+			opacity = 1;
+		}
+
+		if (pause > 35) {
 			pause = 0;
 			opacity = 1;
 		}
 
-		if (degrees == 90 - 3) {
+		if (degrees == 88.5) {
 			$(".text.one").css({'display': 'none'});
 			$(".text.two").fadeIn();
-		}
+			}
 
-		if (degrees == 180 - 3) {
+		if (degrees == 178.5) {
 			$(".text.two").css({'display': 'none'});
 			$(".text.three").fadeIn();
 		}
 
-		if (degrees == 270 - 3) {
+		if (degrees == 268.5) {
 			$(".text.three").css({'display': 'none'});
 			$(".text.four").fadeIn();
 		}
 
-		if (degrees == 357) {
+		if (degrees > 350) {
 			$(".text.four").css({'display': 'none'});
-			$(".text.one").fadeIn();
+			$(".text.one").css({'display': 'block'});
+			$(".text.one").css({'opacity': (degrees - 350) / 10});;
 		}
 
 		if (pause == 0) {
@@ -46,19 +53,20 @@ $(document).ready(function(){
 	        'transform': 'rotate(' + (degrees) + 'deg)'
 			});
 
-			if (degrees < 90) {
+			// opacity decreasing here!
+			if (degrees < 90 && degrees > 0) {
 				$(".text.one").css({
 					'opacity': opacity
 				})
-			} else if (degrees < 180) {
+			} else if (degrees < 180 && degrees > 90) {
 				$(".text.two").css({
 					'opacity': opacity
 				})
-			} else if (degrees < 270) {
+			} else if (degrees < 270 && degrees > 180) {
 				$(".text.three").css({
 					'opacity': opacity
 				})
-			} else {
+			} else if (degrees < 360 && degrees > 270) {
 				$(".text.four").css({
 					'opacity': opacity
 				})
