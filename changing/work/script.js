@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+	// TURN THE THING
 	var pause = 50;
 	var degrees = 0;
 	var opacity = 1;
@@ -6,6 +8,50 @@ $(document).ready(function(){
 		'display': 'none'
 	});
 
+	var repeat = true;
+
+	function bobbleBack() {
+		console.log("HA");
+		$({deg: 3}).animate({deg: 0}, {
+	        duration: 1000,
+	        step: function(now) {
+	            // in the step-callback (that is fired each step of the animation),
+	            // you can use the `now` paramter which contains the current
+	            // animation-position (`0` up to `angle`)
+	            $("#right").css({
+	                transform: 'rotate(' + (degrees + now) % 360 + 'deg)'
+	            });
+	        },
+	        complete: function() { if(repeat) {bobble();}}
+		});
+	}
+
+	function bobble() {
+		console.log("AH");
+		repeat = true;
+		$({deg: 0}).animate({deg: 3}, {
+	        duration: 1000,
+	        step: function(now) {
+	            // in the step-callback (that is fired each step of the animation),
+	            // you can use the `now` paramter which contains the current
+	            // animation-position (`0` up to `angle`)
+	            $("#right").css({
+	                transform: 'rotate(' + (degrees + now) % 360  + 'deg)'
+	            });
+	        },
+	        complete: function() { bobbleBack();}
+	    });
+	}
+
+	$("#titlething").hover(function() {
+		repeat = true;
+		bobble();
+	}, function() {
+		repeat = false;
+	});
+
+	// setTimeout(function() {bobble()}, 3000);
+	
 	$(window).on('wheel', function() {
 		if (degrees > 357) {
 			$(".text.two, .text.three, .text.four").css({
@@ -73,4 +119,9 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+	// GO BACK: CLICK ON NAME
+	$(".name").click(function() {
+		window.location.href="../design.html"
+	})
 });
