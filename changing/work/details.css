@@ -74,28 +74,51 @@
 	transform: translateX(-50%) translateY(-50%);
 }
 
+.himage {
+	width: 50vw;
+	height: 1px;
+	position: absolute;
+}
+
+.himage img {
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
 .image.one {
 	top: 50vh;
 	left: 35vw;
-	transform: translateY(-50%);
+	transform: translateY(-50%) translateX(-50%);
 }
 
+.himage.one {
+	right: 35vw;
+	top: 50vh;
+	transform: translateY(-50%) translateX(-50%);
+}
 
-.image.two {
-	position: absolute;
+.image.two, .himage.two {
 	bottom: 35vw;
 	left: 50vh;
 	transform: translateX(-50%) translateY(50%) rotate(-90deg);
 }
 
 .image.three {
-	position: absolute;
 	bottom: 50vh;
 	right: 35vw;
 	transform: translateX(-50%) translateY(50%) rotate(180deg);
 }
 
-.image.four {
+.himage.three {
+	bottom: 50vh;
+	left: calc(100vh + 35vw);
+	transform: translateX(-50%) translateY(-50%) rotate(180deg);
+}
+
+.image.four, .himage.four {
 	position: absolute;
 	top: 35vw;
 	right: 50vh;

@@ -42,7 +42,7 @@ $(document).ready(function(){
 	            // you can use the `now` paramter which contains the current
 	            // animation-position (`0` up to `angle`)
 	            $("#right").css({
-	                transform: 'rotate(' + (degrees + now) % 360  + 'deg)'
+	                transform: 'rotate(' + (degrees + now) % 270  + 'deg)'
 	            });
 	        },
 	        complete: function() { bobbleBack();}
@@ -61,7 +61,7 @@ $(document).ready(function(){
 	$(window).on('wheel', function() {
 		// if ($("#cover").css("display") == "none") {
 			repeat = false;
-			if (degrees > 357) {
+			if (degrees > 268) {
 				$(".text.two, .text.three, .text.four").css({
 				'display': 'none',
 				'opacity': 1
@@ -90,31 +90,34 @@ $(document).ready(function(){
 				$(".text.three").fadeIn();
 				$(".dot#2").removeClass("fill-color");
 				$(".dot#3").addClass("fill-color");
-			}
-
-			if (degrees == 268.5) {
-				$(".text.three").css({'display': 'none'});
-				$(".text.four").fadeIn();
-				$(".dot#3").removeClass("fill-color");
-				$(".dot#4").addClass("fill-color");
 				$(".down").fadeOut();
+				$(".himage.one").fadeOut();
 				$(".image.one").fadeOut();
 			}
 
-			if (degrees > 350) {
-				$(".text.four").css({'display': 'none'});
+			if (degrees > 265) {
+				$(".text.three").css({'display': 'none'});
 				$(".text.one").css({'display': 'block'});
-				$(".text.one").css({'opacity': (degrees - 350) / 10});;
-				$(".dot#4").removeClass("fill-color");
+				$(".text.one").css({'opacity': (degrees - 260) / 10});;
+				$(".dot#3").removeClass("fill-color");
 				$(".dot#1").addClass("fill-color");
 				$(".down").fadeIn();
+				$(".himage.one").fadeIn();
 				$(".image.one").fadeIn();
 			}
 
+			// if (degrees > 350) {
+			// 	$(".text.four").css({'display': 'none'});
+				
+			// 	$(".dot#4").removeClass("fill-color");
+			// 	$(".dot#1").addClass("fill-color");
+			// 	$(".down").show();
+			// }
+
 			if (pause == 0) {
 				degrees += 1.5;
-				degrees = degrees % 360
-				opacity -= 1/50
+				degrees = degrees % 270;
+				opacity -= 1/50;
 				$("#right").css({
 		        'transform': 'rotate(' + (degrees) + 'deg)'
 				});
@@ -132,11 +135,7 @@ $(document).ready(function(){
 					$(".text.three").css({
 						'opacity': opacity
 					})
-				} else if (degrees < 360 && degrees > 270) {
-					$(".text.four").css({
-						'opacity': opacity
-					})
-				}
+				} 
 			}
 			repeat = true;
 		// }

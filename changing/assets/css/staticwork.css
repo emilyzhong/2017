@@ -96,7 +96,7 @@
 	font-weight: 400;
 }
 
-.name:hover {
+.name:hover, .picturetile:hover {
 	cursor: pointer;
 }
 
