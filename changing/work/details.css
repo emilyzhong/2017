@@ -186,6 +186,30 @@
 	background-color: rgba(255, 255, 255, 1);
 }
 
+.down {
+	position: relative;
+	top: 5px;
+	margin-top: 2px;
+	transform: rotate(45deg);
+	height: 5px;
+	width: 5px;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	animation-name: down-bobble;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-delay: .4s;
+}
+
+@keyframes down-bobble {
+	from {
+		top: 5px;
+	} to {
+		top: 15px;
+	}
+}
+
 .mobilenav {
 	display: none;
 }

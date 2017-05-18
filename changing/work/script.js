@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	var start = false;
-	setTimeout(function() {
-		$("#cover").fadeOut();
-		start=true
-	}, 3000)
+	// setTimeout(function() {
+	// 	$("#cover").fadeOut();
+	// 	start=true
+	// }, 3000)
 
 	// TURN THE THING
 	var pause = 50;
@@ -59,7 +59,7 @@ $(document).ready(function(){
 	// setTimeout(function() {bobble()}, 3000);
 	
 	$(window).on('wheel', function() {
-		if ($("#cover").css("display") == "none") {
+		// if ($("#cover").css("display") == "none") {
 			repeat = false;
 			if (degrees > 357) {
 				$(".text.two, .text.three, .text.four").css({
@@ -97,6 +97,7 @@ $(document).ready(function(){
 				$(".text.four").fadeIn();
 				$(".dot#3").removeClass("fill-color");
 				$(".dot#4").addClass("fill-color");
+				$(".down").hide();
 			}
 
 			if (degrees > 350) {
@@ -105,6 +106,7 @@ $(document).ready(function(){
 				$(".text.one").css({'opacity': (degrees - 350) / 10});;
 				$(".dot#4").removeClass("fill-color");
 				$(".dot#1").addClass("fill-color");
+				$(".down").show();
 			}
 
 			if (pause == 0) {
@@ -135,7 +137,7 @@ $(document).ready(function(){
 				}
 			}
 			repeat = true;
-		}
+		// }
 	});
 
 	// GO BACK: CLICK ON NAME
