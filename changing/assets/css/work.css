@@ -1,4 +1,4 @@
-#content {
+ #content {
 	height: 100%;
 	overflow: hidden;
 	opacity: 1;
@@ -169,6 +169,10 @@ a {
 	height: 100%;
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 #navbar {
 	position: absolute;
 	right: 40px;
@@ -208,6 +212,10 @@ a {
 	overflow: hidden;
 	margin: 10px;
 	/*background-color: black;*/
+}
+
+.picture:hover {
+	cursor: pointer;
 }
 
 

@@ -1,4 +1,9 @@
 $(document).ready(function(){
+	var start = false;
+	setTimeout(function() {
+		$("#cover").fadeOut();
+		start=true
+	}, 3000)
 
 	// TURN THE THING
 	var pause = 50;
@@ -7,6 +12,7 @@ $(document).ready(function(){
 	$(".text.two, .text.three, .text.four").css({
 		'display': 'none'
 	});
+	$(".dot#1").addClass("fill-color");
 
 	var repeat = true;
 
@@ -22,7 +28,7 @@ $(document).ready(function(){
 	                transform: 'rotate(' + (degrees + now) % 360 + 'deg)'
 	            });
 	        },
-	        complete: function() { if(repeat) {bobble();}}
+	        // complete: function() { if(repeat) {bobble();}}
 		});
 	}
 
@@ -53,70 +59,82 @@ $(document).ready(function(){
 	// setTimeout(function() {bobble()}, 3000);
 	
 	$(window).on('wheel', function() {
-		if (degrees > 357) {
-			$(".text.two, .text.three, .text.four").css({
-			'display': 'none',
-			'opacity': 1
-			});
-		}
-
-		if (degrees % 90 == 0) {
-			pause += 1;
-			opacity = 1;
-		}
-
-		if (pause > 35) {
-			pause = 0;
-			opacity = 1;
-		}
-
-		if (degrees == 88.5) {
-			$(".text.one").css({'display': 'none'});
-			$(".text.two").fadeIn();
+		if ($("#cover").css("display") == "none") {
+			repeat = false;
+			if (degrees > 357) {
+				$(".text.two, .text.three, .text.four").css({
+				'display': 'none',
+				'opacity': 1
+				});
 			}
 
-		if (degrees == 178.5) {
-			$(".text.two").css({'display': 'none'});
-			$(".text.three").fadeIn();
-		}
-
-		if (degrees == 268.5) {
-			$(".text.three").css({'display': 'none'});
-			$(".text.four").fadeIn();
-		}
-
-		if (degrees > 350) {
-			$(".text.four").css({'display': 'none'});
-			$(".text.one").css({'display': 'block'});
-			$(".text.one").css({'opacity': (degrees - 350) / 10});;
-		}
-
-		if (pause == 0) {
-			degrees += 1.5;
-			degrees = degrees % 360
-			opacity -= 1/50
-			$("#right").css({
-	        'transform': 'rotate(' + (degrees) + 'deg)'
-			});
-
-			// opacity decreasing here!
-			if (degrees < 90 && degrees > 0) {
-				$(".text.one").css({
-					'opacity': opacity
-				})
-			} else if (degrees < 180 && degrees > 90) {
-				$(".text.two").css({
-					'opacity': opacity
-				})
-			} else if (degrees < 270 && degrees > 180) {
-				$(".text.three").css({
-					'opacity': opacity
-				})
-			} else if (degrees < 360 && degrees > 270) {
-				$(".text.four").css({
-					'opacity': opacity
-				})
+			if (degrees % 90 == 0) {
+				pause += 1;
+				opacity = 1;
 			}
+
+			if (pause > 35) {
+				pause = 0;
+				opacity = 1;
+			}
+
+			if (degrees == 88.5) {
+				$(".text.one").css({'display': 'none'});
+				$(".text.two").fadeIn();
+				$(".dot#1").removeClass("fill-color");
+				$(".dot#2").addClass("fill-color");
+				}
+
+			if (degrees == 178.5) {
+				$(".text.two").css({'display': 'none'});
+				$(".text.three").fadeIn();
+				$(".dot#2").removeClass("fill-color");
+				$(".dot#3").addClass("fill-color");
+			}
+
+			if (degrees == 268.5) {
+				$(".text.three").css({'display': 'none'});
+				$(".text.four").fadeIn();
+				$(".dot#3").removeClass("fill-color");
+				$(".dot#4").addClass("fill-color");
+			}
+
+			if (degrees > 350) {
+				$(".text.four").css({'display': 'none'});
+				$(".text.one").css({'display': 'block'});
+				$(".text.one").css({'opacity': (degrees - 350) / 10});;
+				$(".dot#4").removeClass("fill-color");
+				$(".dot#1").addClass("fill-color");
+			}
+
+			if (pause == 0) {
+				degrees += 1.5;
+				degrees = degrees % 360
+				opacity -= 1/50
+				$("#right").css({
+		        'transform': 'rotate(' + (degrees) + 'deg)'
+				});
+
+				// opacity decreasing here!
+				if (degrees < 90 && degrees > 0) {
+					$(".text.one").css({
+						'opacity': opacity
+					})
+				} else if (degrees < 180 && degrees > 90) {
+					$(".text.two").css({
+						'opacity': opacity
+					})
+				} else if (degrees < 270 && degrees > 180) {
+					$(".text.three").css({
+						'opacity': opacity
+					})
+				} else if (degrees < 360 && degrees > 270) {
+					$(".text.four").css({
+						'opacity': opacity
+					})
+				}
+			}
+			repeat = true;
 		}
 	});
 
