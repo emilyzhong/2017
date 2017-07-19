@@ -5,7 +5,7 @@ $(document).ready(function() {
         $("body, html").addClass("yes");
     }
     
-    $("body, #content, img, #title, #small-text").click(function() {
+    $("#click").click(function() {
         console.log("clickled");
         if ($("body").hasClass("blue")) {
             $("html, body").removeClass("blue");
