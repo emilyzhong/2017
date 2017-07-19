@@ -5,12 +5,12 @@ $(document).ready(function() {
         $("body, html").addClass("yes");
     }
     
-    $(window).click(function() {
+    $("body, #content, img, #title, #small-text").click(function() {
         console.log("clickled");
         if ($("body").hasClass("blue")) {
-            $("body").removeClass("blue");
+            $("html, body").removeClass("blue");
         } else {
-            $("body").addClass("blue");
+            $("html, body").addClass("blue");
         }
     });
 });
