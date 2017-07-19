@@ -4,4 +4,13 @@ $(document).ready(function() {
     } else {
         $("body, html").addClass("yes");
     }
+    
+    $(window).click(function() {
+        console.log("clickled");
+        if ($("body").hasClass("blue")) {
+            $("body").removeClass("blue");
+        } else {
+            $("body").addClass("blue");
+        }
+    });
 });
