@@ -1,10 +1,14 @@
 $(document).ready(function() {
 
 	var homepage = true
+    
+    if ($(window).width() < 768) {
+        window.location.replace("https://emilyzhong.github.io/mobile.html");
+    }
 
 	// hover effects on home page
-	// 991 px for tablets, phones: no hover effect
-	if ( $(window).width() > 991) {
+	// 768 px for tablets, phones: no hover effect
+	if ( $(window).width() > 768) {
 		$("#left").hover(function() {
 			if (homepage) {
 				console.log("LEFT HOVER");
@@ -37,7 +41,7 @@ $(document).ready(function() {
 
 	// CLICK EFFECTS ON HOME PAGE:
 	//showing about section
-	if ( $(window).width() > 991) {
+	if ( $(window).width() > 768) {
 		$("#left").click(function() {
 			if (homepage) {
 				$("#content").animate({opacity: 1}, 300);
@@ -177,7 +181,7 @@ $(document).ready(function() {
 	// IMAGES
 
 	var notexpanded = true
-	if ( $(window).width() > 991) {
+	if ( $(window).width() > 768) {
 		$(".overlay").hover(function() {
 			$(this).animate({opacity: 0}, 300);
 			var num = $(this).attr('class').split(' ')[1]
@@ -193,7 +197,7 @@ $(document).ready(function() {
 
 
 	$(".picturetile").click(function() {
-		if ($(window).width() > 991) {
+		if ($(window).width() > 768) {
 			$(".behance").fadeIn()
 			$(".textcontainer").fadeIn()
 		}
@@ -230,7 +234,7 @@ $(document).ready(function() {
 		$("#expandedimage").empty();
 		$("#expandoverlay").fadeOut();
 		$(".textgroup").fadeOut();
-		if ($(window).width() <= 991) {
+		if ($(window).width() <= 768) {
 			$(".textcontainer").fadeOut();
 		}
 		$(".behance").fadeOut()

@@ -100,8 +100,7 @@
 }
 
 #me-picture {
-	position: relative;
-	right: 0;
+	position: absolute;
     height: 100%;
     /*transform: translateX(-42%) translateY(-25%);*/
 }
