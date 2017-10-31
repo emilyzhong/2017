@@ -1,4 +1,13 @@
 $(document).ready(function() {
+	
+	setTimeout(function() {
+		$(".name").fadeIn("slow");
+	}, 200);
+
+	setTimeout(function() {
+		$("#intro, #nav").fadeIn("slow");
+	}, 900);
+
 	// DECLARED
 	let task = {"Google": {
 					"img": "google.jpg",
@@ -62,7 +71,7 @@ $(document).ready(function() {
 		$(".card-1").css("opacity", 1);
 		setTimeout(function() {
 			$(".card-2").css("opacity", 1);
-		}, 500)
+		}, 600)
 	})
 
 	// Hovering
