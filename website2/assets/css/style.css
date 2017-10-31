@@ -1,0 +1,233 @@
+#content {
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#landing {
+    height: 100vh;
+    margin: 0;
+}
+
+/** INTRO **/
+.name {
+    color: var(--emphasis-color);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-top: 25vh;
+
+}
+
+#intro {
+    margin: 24px 0px;
+}
+
+#nav {
+    margin: 24px auto;
+}
+
+#nav a {
+    display: block;
+    margin: 6px 0px;
+}
+
+/* ABOUT */
+#about div {
+    width: 100%;
+}
+
+/** ACTIVITIES **/
+#together {
+    position: relative;
+    top: 50%;
+    height: 40vh;
+}
+
+#tasks {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    top: 17px;
+    padding: 12px;
+    width: 17vw;
+    min-height: 20vh;
+    max-height: 39vh;
+    overflow: scroll;
+}
+
+#tasks a {
+    position: relative;
+    display: block;
+}
+
+#description {
+    position: absolute;
+    width: 35vw;
+    top: 32vh;
+    right: 0vw;
+    text-align: right;
+    display: none;
+}
+
+#description p {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    font-size: 14px;
+}
+
+#background-img {
+    position: absolute;
+    width: 80%;
+    height: 40vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    overflow: hidden;
+    background: white;
+}
+
+#background-img div {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--emphasis-color);
+    opacity: 0.5;
+}
+
+#background-img img {
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+
+/* PORTFOLIO */
+#cards-container {
+    width: 100%;
+}
+
+.card {
+    /*width: calc((100% - 10px) / 2);*/
+    width: 100%;
+    height: 150px;
+    opacity: 0.7;
+    background: var(--emphasis-color);
+    display: inline-block;
+    margin: 4.5px 0;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    transition: 0.2s all;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.card:hover img {
+    opacity: 0.2;
+}
+
+.card-title {
+    /*opacity: 0;*/
+    font-size: 21px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    line-height: 1.2em;
+    z-index: 2;
+}
+
+.card-title a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    margin: 5px;
+    width: 100%;
+}
+
+.card img {
+    height: 40%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: block;
+    opacity: 0.4;
+}
+
+section {
+    margin-bottom: 120px;
+}
+
+a {
+    color: var(--emphasis-color);
+    text-decoration: none;
+    transition: 0.2s all;
+}
+
+a:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+    text-decoration: underline;
+    animation: sideBounce .5s ease 0s infinite alternate;
+}
+
+@keyframes sideBounce {
+    from {
+        padding-left: 0px;
+    } to {
+        padding-left: 10px;
+    }
+}
+
+html {
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background: #fafafa;
+    --main-text-color: rgba(0, 0, 0, 0.7);
+    /*--emphasis-color: rgba(150, 10, 10, 0.3);*/
+    --emphasis-color: #DDB3B3;
+}
+
+/* TODO: change so we make it when width < height */
+@media (max-width: 650px) {
+    #content {
+        width: 70vw;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .name {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    #background-img img {
+        width: auto;
+        height: 100%;
+    }
+
+    #description {
+        display: none;
+    }
+}
