@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	// DECLARED
-	// TODO: Pick better pictures
 	let task = {"Google": {
 					"img": "google.jpg",
 					"descrip": "In summer 2017, I interned at Google's Irvine campus as part of their EP program, where I worked on the front end of an internal data visualization tool, using JavaScript, d3, AngularJs, and CSS"
@@ -24,6 +23,12 @@ $(document).ready(function() {
 	}
 
 	// ACTIVITIES
+	const start = task["Google"];
+
+	$("#background-img img").attr("src", "assets/img/" + start.img);
+	$("#description p").text(start.descrip);
+	$("#description").show()
+
 
 	// Hovering
 	$("#tasks>a").hover(function() {
@@ -47,6 +52,18 @@ $(document).ready(function() {
 	}, function() {})  
 
 	// PORTFOLIO
+
+	// Waypoints
+	$("#activities").waypoint(function() {
+		$("#together").css("opacity", 1);
+	})
+
+	$("#portfolio").waypoint(function() {
+		$(".card-1").css("opacity", 1);
+		setTimeout(function() {
+			$(".card-2").css("opacity", 1);
+		}, 500)
+	})
 
 	// Hovering
 	// $(".card").hover(function() {
