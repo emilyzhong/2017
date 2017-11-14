@@ -5,7 +5,7 @@ $(document).ready(function() {
 	}, 200);
 
 	setTimeout(function() {
-		$("#intro, #nav").fadeIn("slow");
+		$("#intro, #nav").fadeIn(900);
 	}, 900);
 
 	// DECLARED
