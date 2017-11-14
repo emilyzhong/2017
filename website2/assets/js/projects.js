@@ -1,17 +1,10 @@
 $(document).ready(function() {
-	$(".section-image, #image").click(function() {
-		let image = $(this).children().attr("src");
+	$(".section-image").click(function() {
+		let image = $(this).children().attr("src")
 
-		// TODO: make better resizing lightbox-portrait and lightbox-landscape.
-		if ($(this).children().hasClass("landscape")) {
-			$("#lightbox-image").children().removeClass("lightbox-portrait");
-			$("#lightbox-image").children().addClass("lightbox-landscape");
-		} else {
-			$("#lightbox-image").children().addClass("lightbox-portrait");
-			$("#lightbox-image").children().removeClass("lightbox-landscape");
-		}
+		let newImage = image.substring(0, image.length - 4) + "_vertical.png"
 
-		$("#lightbox-image img").attr("src", image)
+		$("#lightbox-image img").attr("src", newImage)
 		$("#lightbox").show();
 		$("body").css("overflow", "hidden");
 	})
