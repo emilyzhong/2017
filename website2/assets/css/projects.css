@@ -25,11 +25,9 @@
     font-weight: 700;
     color: white;
     z-index: 2;
-    /*color: var(--emphasis-color);*/
 }
 
 #image, .section-image {
-    /*background: var(--emphasis-color);*/
     position: relative;
     margin: 0 auto;
     height: 60vh;
@@ -93,6 +91,62 @@ p#text {
     font-size: 24px;
     line-height: 1.2em;
     font-weight: 700;
+}
+
+#footer {
+    height: 500px;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--emphasis-color);
+}
+ 
+#footer-container {
+    margin-top: 40px;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.footer-header {
+    font-size: 24px;
+}
+
+#footer-projects {
+    width: 600px;
+    margin-bottom: 30px;
+}
+
+.project-category {
+    margin-top: 20px;
+    font-size: 21px;
+}
+
+#footer a {
+    color: white;
+    display: block;
+}
+
+#footer a:hover {
+    transform: translateX(5px);
+    text-decoration: underline;
+    animation: sideBounce .5s ease 0s infinite alternate;
+}
+
+.column {
+    display: inline-block;
+    width: calc(50% - 20px);
+}
+
+@keyframes sideBounce {
+    from {
+        padding-left: 0px;
+    } to {
+        padding-left: 10px;
+    }
 }
 
 #lightbox {

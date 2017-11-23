@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	setTimeout(function() {
 		$(".name").fadeIn("slow");
 	}, 200);
@@ -34,10 +33,11 @@ $(document).ready(function() {
 	// ACTIVITIES
 	const start = task["Google"];
 
+	// TODO: Something about manipulating the DOM if some kind of screen something.
+
 	$("#background-img img").attr("src", "assets/img/" + start.img);
 	$("#description p").text(start.descrip);
 	$("#description").show()
-
 
 	// Hovering
 	$("#tasks>a").hover(function() {
