@@ -1,5 +1,5 @@
 #content {
-    max-width: 600px;
+    width: 600px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -25,20 +25,19 @@
     font-weight: 700;
     color: white;
     z-index: 2;
+    font-family: 'Inconsolata', monospace;
 }
 
 #image, .section-image {
     position: relative;
     margin: 0 auto;
-    height: 60vh;
-    width: 100%;
     z-index: -1;
     overflow: hidden;
-    cursor: pointer;
     z-index: 1;
 }
 
 #image {
+    height: 60vh;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -47,8 +46,10 @@
 }
 
 .section-image {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
+    padding-top: 66%;
 }
 
 img {
@@ -75,11 +76,11 @@ img {
 
 .caption {
     opacity: 0.7;
-    font-size: 14px;
+    font-size: 0.8em;
     line-height: 1.2em;
 }
 
-p#text {
+p.text {
     margin: 10px 0;
 }
 
@@ -91,6 +92,7 @@ p#text {
     font-size: 24px;
     line-height: 1.2em;
     font-weight: 700;
+    font-family: 'Inconsolata', monospace;
 }
 
 #footer {
@@ -128,6 +130,7 @@ p#text {
 #footer a {
     color: white;
     display: block;
+    font-family: 'Inconsolata', monospace;
 }
 
 #footer a:hover {
@@ -138,7 +141,7 @@ p#text {
 
 .column {
     display: inline-block;
-    width: calc(50% - 20px);
+    width: calc(50% - 3px);
 }
 
 @keyframes sideBounce {
@@ -185,6 +188,7 @@ p#text {
 
 a {
     color: var(--emphasis-color);
+    font-family: 'Inconsolata', monospace;
 }
 
 #back {
@@ -197,7 +201,7 @@ a {
 html {
     margin: 0 auto;
     position: relative;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Karla', sans-serif;
 }
 
 body {
@@ -207,14 +211,36 @@ body {
     margin: 0 auto;
     background: #fafafa;
     --main-text-color: rgba(0, 0, 0, 0.7);
-    /*--emphasis-color: rgba(150, 10, 10, 0.3);*/
     --emphasis-color: #DDB3B3;
 }
 
 @media (max-width: 650px) {
     #content {
-        width: 70vw;
-        font-size: 12px;
-        line-height: 18px;
+        width: 80vw;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        line-height: 30px;
+        color: var(--main-text-color);
     }
+
+    #footer-projects, #footer, #footer-container {
+        width: 100vw;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #footer-projects, #footer-container {
+        height: none;
+    }
+
+    #footer {
+        height: 130vh;
+    }
+
+    .column {
+        width: 50%;
+    }
+
 }
