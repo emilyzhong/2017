@@ -186,6 +186,33 @@ p.text {
     transform: translate(-50%, 0);
 }
 
+#close {
+    color: white;
+    opacity: 0.4;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transition: 0.3s;
+    font-size: 2em;
+    line-height: 0.7em;
+    text-align: center;
+}
+
+#close span {
+    opacity: 0;
+    font-size: 0.5em;
+    transition: 0.3s;
+}
+
+#close:hover {
+    opacity: 0.8;
+    /*font-style: italic;*/
+}
+
+#close:hover span {
+    opacity: 1;
+}
+
 a {
     color: var(--emphasis-color);
     font-family: 'Inconsolata', monospace;
