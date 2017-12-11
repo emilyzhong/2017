@@ -117,7 +117,7 @@
     opacity: 0.4;
 }
 
-/* MOBILE/NARROW VIEW */
+/* MOBILE/NARROW VIEW */ 
 #mobile-activities {
     opacity: 0;
     transition: 0.4s;
