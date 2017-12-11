@@ -6,7 +6,7 @@
     font-size: 18px;
     line-height: 30px;
     color: rgba(0, 0, 0, 0.7);
-}
+} 
 
 #landing {
     height: 100vh;
@@ -16,8 +16,7 @@
 /** INTRO **/
 .name {
     color: var(--emphasis-color);
-    font-size: 48px;
-    line-height: 50px;
+    font-size: 2.5em;
     font-weight: 700;
     margin-bottom: 24px;
     padding-top: 25vh;
@@ -117,6 +116,28 @@
     opacity: 0.4;
 }
 
+#mobile-activities {
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.activity-card {
+    padding: 10px;
+    background: white;
+    margin: 20px 0;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+.activity-card .card-title {
+    color: var(--emphasis-color);
+    font-size: 1.2em;
+}
+
+.activity-card a:hover {
+    cursor: pointer;
+}
+
 /* PORTFOLIO */
 #cards-container {
     width: 100%;
@@ -133,8 +154,8 @@
     opacity: 0;
 }
 
-.card-title {
-    font-size: 21px;
+#portfolio .card-title {
+    font-size: 1.2em;
     width: 100%;
     line-height: 1.2em;
     z-index: 2;
@@ -216,7 +237,6 @@ body {
     --emphasis-color: #DDB3B3;
 }
 
-/* TODO: change so we make it when width < height */
 @media (max-width: 650px) {
     #content, .card-links a {
         width: 70vw;
@@ -224,12 +244,8 @@ body {
     }
     
     .name {
-        font-size: 24px;
-        line-height: 26px;
-    }
-
-    .card-title {
-        font-size: 18px;
+        font-size: 1.5em;
+        line-height: 1em;
     }
 
     #background-img {
@@ -247,5 +263,21 @@ body {
     .card-1, .card-2 {
         width: 100%;
         display: block;
+    }
+
+    a:hover {
+        animation: none;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    .name {
+        padding-top: 8vh;
+    }
+
+    #landing .name {
+        padding-top: 20vh;
     }
 }
