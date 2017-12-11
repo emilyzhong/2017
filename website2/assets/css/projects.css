@@ -36,12 +36,11 @@
 }
 
 #image {
-    height: 60vh;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    height: 100%;
     width: 85%;
+    padding-top: 40%;
 }
 
 .section-image {
@@ -254,6 +253,44 @@ body {
 
     .column {
         width: 50%;
+    }
+
+    #title {
+        position: relative;
+        bottom: 0;
+        top: auto;
+        padding: 20px;
+        font-size: 3em;
+        line-height: 1em;
+        font-weight: 700;
+        color: var(--emphasis-color);
+        background: rgba(0, 0, 0 ,0);
+        z-index: 2;
+        font-family: 'Inconsolata', monospace;
+        text-align: center;
+    }
+
+    #image {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: translateX(0);
+    }
+
+    /* 
+     * Select all .section children of #content, including the first one, and 
+     * adjust margin
+     */
+    #content > .section {
+        margin-top: 0px;
+    }
+
+    /* 
+     * Select all but the first .section child of #content,
+     * and remove previous rule.
+     */
+    #content > .section ~ .section {
+        margin-top: 60px;
     }
 
 }
