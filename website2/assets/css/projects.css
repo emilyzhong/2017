@@ -158,7 +158,7 @@ p.text {
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 50%;
+    top: 50vh;
     transform: translate(-50%, -50%);
     width: 80vw;
     height: 90vh;
@@ -175,8 +175,8 @@ p.text {
     color: white;
     opacity: 0.4;
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 5%;
+    top: 5%;
     transition: 0.3s;
     font-size: 2em;
     line-height: 0.7em;
@@ -191,7 +191,6 @@ p.text {
 
 #close:hover {
     opacity: 0.8;
-    /*font-style: italic;*/
 }
 
 #close:hover span {
@@ -291,6 +290,12 @@ body {
      */
     #content > .section ~ .section {
         margin-top: 60px;
+    }
+
+    #lightbox-image img {
+        width: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
 }

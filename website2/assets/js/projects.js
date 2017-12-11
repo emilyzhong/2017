@@ -11,8 +11,12 @@ $(document).ready(function() {
 		}
 	})
 
-	$("#overlay").click(function() {
+	$("#overlay, #lightbox-image").click(function() {
 		$("#lightbox").hide()
 		$("body").css("overflow", "scroll");
+	})
+
+	$("#lightbox-image img").click(function(e) {
+		e.stopPropagation();
 	})
 })
