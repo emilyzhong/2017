@@ -118,6 +118,7 @@
 }
 
 /* MOBILE/NARROW VIEW */ 
+
 #mobile-activities {
     opacity: 0;
     transition: 0.4s;
