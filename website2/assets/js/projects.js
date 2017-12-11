@@ -7,13 +7,13 @@ $(document).ready(function() {
 
 			$("#lightbox-image img").attr("src", newImage)
 			$("#lightbox").show();
-			$("body").css("overflow", "hidden");
+			$("html body").css("overflow", "hidden");
 		}
 	})
 
 	$("#overlay, #lightbox-image").click(function() {
 		$("#lightbox").hide()
-		$("body").css("overflow", "scroll");
+		$("html body").css("overflow", "scroll");
 	})
 
 	$("#lightbox-image img").click(function(e) {
