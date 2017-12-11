@@ -72,6 +72,7 @@ $(document).ready(function() {
 	})
 
 	$(".read-more").click(function() {
+		console.log("read-more")
 		let $parent = $(this).prev()
 		let title = $parent.prev('.card-title').text()
 		let fullText = task[title].descrip

@@ -215,8 +215,8 @@ html {
     font-family: 'Karla', sans-serif;
 }
 
-body {
-    height: 100%;
+body, #pseudobody {
+    height: 100vh;
     width: 100%;
     position: relative;
     margin: 0 auto;

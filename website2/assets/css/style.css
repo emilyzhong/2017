@@ -137,8 +137,12 @@
     font-size: 1.2em;
 }
 
-.activity-card a:hover {
+.activity-card .read-more:hover {
     cursor: pointer;
+}
+
+.read-more {
+    padding: 5px;
 }
 
 /* PORTFOLIO */
@@ -155,6 +159,7 @@
     color: var(--emphasis-color);
     transition: 0.4s all;
     opacity: 0;
+    vertical-align: top;
 }
 
 #portfolio .card-title {
