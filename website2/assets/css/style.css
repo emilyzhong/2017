@@ -240,8 +240,9 @@ body {
     position: relative;
     margin: 0 auto;
     background: #fafafa;
-    --main-text-color: rgba(0, 0, 0, 0.7);
-    --emphasis-color: #DDB3B3;
+    --main-text-color: rgba(0, 0, 0, 0.8);
+    /*--emphasis-color: #DDB3B3;*/
+    --emphasis-color: #95C2EE;
 }
 
 @media (max-width: 650px) {

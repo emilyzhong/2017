@@ -16,7 +16,8 @@
 
 #title {
     position: absolute;
-    background: rgba(221,179,179, 0.8); /* emphasis color w opacity */
+    /*background: rgba(221,179,179, 0.8); /* emphasis color w opacity */
+    background: var(--emphasis-color);
     top: 2vh;
     padding: 20px 20px;
     font-size: 48px;
@@ -221,8 +222,9 @@ body, #pseudobody {
     position: relative;
     margin: 0 auto;
     background: #fafafa;
-    --main-text-color: rgba(0, 0, 0, 0.7);
-    --emphasis-color: #DDB3B3;
+    --main-text-color: rgba(0, 0, 0, 0.8);
+    /*--emphasis-color: #DDB3B3;*/
+    --emphasis-color: #95C2EE;
 }
 
 @media (max-width: 650px) {
