@@ -3,7 +3,7 @@ $(document).ready(function() {
 		if (document.getElementById("lightbox")) {
 			let image = $(this).children().attr("src")
 
-			let newImage = image.substring(0, image.length - 5) + "_vertical.jpeg"
+			let newImage = image.substring(0, 14) + "lightbox-images/" + image.substring(14, image.length) 
 
 			$("#lightbox-image img").attr("src", newImage)
 			$("#lightbox").show();
