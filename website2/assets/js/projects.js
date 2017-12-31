@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	/** TODO: Currently, all images are expected to be a 2:3 ratio using padding-top. 
+	Create code that:
+
+	1) Detects the height/width aspect ratio of the image.
+	2) Sets padding-top value for the given image to that ratio.
+	**/
 	$(".section-image").click(function() {
 		if (document.getElementById("lightbox")) {
 			let image = $(this).children().attr("src")
