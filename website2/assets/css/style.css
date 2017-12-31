@@ -289,3 +289,13 @@ body {
         padding-top: 20vh;
     }
 }
+
+/* 
+INITIAL FOR WAYPOINTS. 
+This is here so it's easier to work without
+internet/ when waypoints won't work. 
+Remove later.
+*/
+#together, #mobile-activities, .card-1, .card-2 {
+    opacity: 1;
+}

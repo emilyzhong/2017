@@ -9,7 +9,58 @@ $(document).ready(function() {
 	footer of each existing projects page.
 	Create code that autofills the footer section so I don't have to do it, 
 	taking from an array or something.
+
+	See experimental.
 	**/
+
+	// CONSTANTS
+	let footerLinks = {
+		"User Experience Design": {
+			"Nutrition Label Redesign": "nutrition_label.html",
+		},
+		"Graphic Design": {
+			"Geofilters": "geofilters.html",
+			"Logos": "logos.html",
+			"Daily Californian": "daily_cal_design.html",
+		},
+		"Programming": {
+			"Where we cry": "where_we_cry.html",
+		},
+		"Fine Art": {
+
+		}
+	};
+
+	// Hack column things hahaha
+	// 2 categories per column.
+	// Test when there's internet.
+	let newColumn = true;
+	let divString = '';
+
+	Object.keys(footerLinks).forEach(function(category) {
+		if (newColumn) {
+			divString += '<div class="column">'
+		}
+
+		divString = divString + '<div class="project-category">' + category + '</div>';
+
+		Object.keys(footerLinks[category]).forEach(function(pageTitle) {
+			// Include something to ensure that current page isn't included.
+			let link = footerLinks[category][pageTitle];
+			divString = divString + '<a href="' + link + '">' + pageTitle + '</a>';
+		})
+
+		if (!newColumn) {
+			divString += '</div>' // Close column div.
+			$("#footer-projects").append(divString);
+			divString = '';
+		}
+
+		newColumn = !newColumn;
+	})
+
+	// End experimental.
+
 	$(".section-image").click(function() {
 		if (document.getElementById("lightbox")) {
 			let image = $(this).children().attr("src")
