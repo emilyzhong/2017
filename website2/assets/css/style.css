@@ -216,6 +216,12 @@ a:hover {
     animation: sideBounce .5s ease 0s infinite alternate;
 }
 
+.coming-soon:hover {
+    transform: trnaslateX(0px);
+    animation: none;
+    text-decoration: none;
+}
+
 @keyframes sideBounce {
     from {
         padding-left: 0px;

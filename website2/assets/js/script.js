@@ -38,10 +38,12 @@ $(document).ready(function() {
 	// ACTIVITIES
 	const start = task["Google"];
 
+	/** Shortens length of string to given character length and adds ellipses **/
 	let shorten = function(str, char) {
 		return str.substring(0, char - 3) + '... '
 	} 
 
+	/** Creates DOM structure for mobile responsiveness **/
 	let calculateActivities = function() {
 		if ($(window).width() > 900) {
 			$("#mobile-activities").hide();
@@ -114,6 +116,13 @@ $(document).ready(function() {
 	}, function() {}) 
 
 	// PORTFOLIO
+	let oldText;
+	$(".coming-soon").hover(function() {
+		oldText = $(this).text();
+		$(this).text(oldText + " (Coming Soon!)");
+	}, function() {
+		$(this).text(oldText);
+	})
 
 	// Waypoints
 	$("#activities").waypoint(function() {
