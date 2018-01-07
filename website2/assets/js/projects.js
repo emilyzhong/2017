@@ -1,11 +1,4 @@
 $(document).ready(function() {
-	/** TODO: Currently, all images are expected to be a 2:3 ratio using padding-top. 
-	Create code that:
-
-	1) Detects the height/width aspect ratio of the image.
-	2) Sets padding-top value for the given image to that ratio.
-
-	**/
 
 	// CONSTANTS
 	let footerLinks = {
@@ -18,16 +11,31 @@ $(document).ready(function() {
 			"Daily Californian": "daily_cal_design.html",
 		},
 		"Programming": {
-			"Where we cry": "where_we_cry.html",
+			"Where We Cry": "where_we_cry.html",
 		},
-		"Fine Art": {
+		// "Fine Art": {
 
-		}
+		// }
 	};
 
-	// Hack column things hahaha
+
+	// IMAGE RESIZING THINGS
+
+	$('.section-image').each(function() {
+		let image = $(this).children("img");
+	    let height = image.height();
+	    let width = image.width();
+
+	    let aspectRatio = height / width;
+
+	    $(this).css("padding-top", aspectRatio * 100 + "%");
+	});
+
+
+	// FOOTER
+
+	// Hacky column things hahaha
 	// 2 categories per column.
-	// Test when there's internet.
 	let newColumn = true;
 	let divString = '';
 
@@ -52,6 +60,9 @@ $(document).ready(function() {
 
 		newColumn = !newColumn;
 	})
+
+
+	// LIGHTBOX
 
 	$(".section-image").click(function() {
 		if (document.getElementById("lightbox")) {
