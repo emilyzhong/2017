@@ -3,12 +3,12 @@ $(document).ready(function() {
 	// CONSTANTS
 	let footerLinks = {
 		"User Experience Design": {
-			"Nutrition Label Redesign": "nutrition_label.html",
+			"Nutrition Label": "nutrition_label.html",
 		},
 		"Graphic Design": {
 			"Geofilters": "geofilters.html",
-			"Logos": "logos.html",
-			"Daily Californian": "daily_cal_design.html",
+			"Logo Design": "logos.html",
+			"Daily Cal Design": "daily_cal_design.html",
 		},
 		"Programming": {
 			"Where We Cry": "where_we_cry.html",
@@ -40,6 +40,13 @@ $(document).ready(function() {
 	let divString = '';
 
 	Object.keys(footerLinks).forEach(function(category) {
+		
+		// HARDCODED FOR NUTRITION LABEL, remove when theres more ux projects.
+		// this is pretty disgusting im so sorry
+		if ($("#title").text() == "Nutrition Label" && category == "User Experience Design") {
+			return;
+		}
+
 		if (newColumn) {
 			divString += '<div class="column">'
 		}
@@ -47,7 +54,11 @@ $(document).ready(function() {
 		divString = divString + '<div class="project-category">' + category + '</div>';
 
 		Object.keys(footerLinks[category]).forEach(function(pageTitle) {
-			// Include something to ensure that current page isn't included.
+			// Ensure that current page isn't included.
+			if (pageTitle == $("#title").text()) {
+				return;
+			} 
+
 			let link = footerLinks[category][pageTitle];
 			divString = divString + '<a href="' + link + '">' + pageTitle + '</a>';
 		})
