@@ -26,9 +26,11 @@ $(document).ready(function() {
 	    let height = image.height();
 	    let width = image.width();
 
-	    let aspectRatio = height / width;
+	    let aspectRatio = height / width * 100;
 
-	    $(this).css("padding-top", aspectRatio * 100 + "%");
+	    if (aspectRatio) {
+	    	$(this).css("padding-top", aspectRatio + "%");
+	    }
 	});
 
 

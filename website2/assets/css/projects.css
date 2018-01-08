@@ -69,6 +69,14 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    transition: 0.4s ease-out;
+}
+
+.section-image:hover img {
+    position: absolute;
+    top: calc(50% * 1.1);
+    left: calc(50% * 1.1);
+    transform: scale(1.1) translate(-50%, -50%);
 }
 
 .caption {
