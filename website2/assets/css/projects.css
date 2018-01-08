@@ -101,12 +101,18 @@ p.text {
 }
 
 #footer {
-    height: 80vh;
+    height: 0vh;
     width: 100vw;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     background: var(--emphasis-color);
+    transition: 1.2s ease-in-out;
+}
+
+#for-waypoints {
+    position: absolute;
+    top: -80vh;
 }
  
 #footer-container {

@@ -314,6 +314,14 @@ body {
     #landing .name {
         padding-top: 20vh;
     }
+
+    #background-fill {
+        height: 100vh;
+    }
+
+    #contact p, #contact a {
+        opacity: 1;
+    }
 }
 
 /* 

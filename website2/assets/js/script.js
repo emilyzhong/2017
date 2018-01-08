@@ -136,7 +136,7 @@ $(document).ready(function() {
 		}, 600)
 	})
 
-	$("#contact").waypoint(function() {
+	$("#for-waypoints").waypoint(function() {
 		$("#background-fill").css("height", "100vh");
 		setTimeout(function() {
 			$("#contact a, #contact p").css("opacity", 1);
