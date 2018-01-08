@@ -217,9 +217,29 @@ a:hover {
 }
 
 .coming-soon:hover {
-    transform: trnaslateX(0px);
+    transform: translateX(0px);
     animation: none;
     text-decoration: none;
+}
+
+/* CONTACT */
+#background-fill {
+    width: 100vw;
+    background: var(--emphasis-color);
+    height: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: 1.2s ease-in-out;
+}
+
+#contact, #contact .name, #contact a {
+    color: white;
+}
+
+#contact p, #contact a {
+    opacity: 0;
 }
 
 @keyframes sideBounce {

@@ -135,4 +135,11 @@ $(document).ready(function() {
 			$(".card-2").css("opacity", 1);
 		}, 600)
 	})
+
+	$("#contact").waypoint(function() {
+		$("#background-fill").css("height", "100vh");
+		setTimeout(function() {
+			$("#contact a, #contact p").css("opacity", 1);
+		}, 600)
+	})
 });
