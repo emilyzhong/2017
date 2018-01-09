@@ -137,7 +137,7 @@ $(document).ready(function() {
 	})
 
 	$("#for-waypoints").waypoint(function() {
-		$("#background-fill").css("height", "100vh");
+		$("#background-fill").css("height", "100%");
 		setTimeout(function() {
 			$("#contact a, #contact p").css("opacity", 1);
 		}, 600)

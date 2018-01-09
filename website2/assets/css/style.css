@@ -238,6 +238,12 @@ a:hover {
     color: white;
 }
 
+#contact {
+    height: 90vh;
+    margin-bottom: 0;
+    position: relative;
+}
+
 #contact p, #contact a {
     opacity: 0;
 }
