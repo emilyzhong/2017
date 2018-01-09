@@ -39,9 +39,9 @@ $(document).ready(function() {
 	// waypoints
 	$("#for-waypoints").waypoint(function() {
 		$("#footer").css("height", "80vh");
-		// setTimeout(function() {
-		// 	$("#contact a, #contact p").css("opacity", 1);
-		// }, 600)
+		setTimeout(function() {
+			$("#footer-container").css("opacity", 1);
+		}, 600)
 	})
 
 	// Hacky column things hahaha

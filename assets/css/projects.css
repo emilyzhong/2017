@@ -122,6 +122,7 @@ p.text {
     left: 50%;
     transform: translateX(-50%);
     color: white;
+    opacity: 0;
 }
 
 .footer-header {
