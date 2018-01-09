@@ -4,8 +4,14 @@ $(document).ready(function() {
 	}, 200);
 
 	setTimeout(function() {
-		$("#intro, #nav").fadeIn(900);
+		$("#intro").fadeIn(900);
 	}, 900);
+
+	$("#nav > a").each(function(i, elem) {
+		setTimeout(function() {
+			$(elem).css("opacity", 1);
+		}, 1500 + 300 * i);
+	});
 
 	// DECLARED
 	let task = {"Google": {
@@ -94,7 +100,7 @@ $(document).ready(function() {
 	$("#description").show()
 
 	// Hovering
-	$("#tasks>a").hover(function() {
+	$("#tasks > a").hover(function() {
 		let selectedTask = task[this.textContent];
 
 		let image = $("#background-img img");
@@ -127,6 +133,14 @@ $(document).ready(function() {
 	$("#activities").waypoint(function() {
 		$("#together").css("opacity", 1);
 		$("#mobile-activities").css("opacity", 1)
+		$("#tasks > a").each(function(index, elem) {
+			setTimeout(function() {
+				$(elem).css("opacity", 1);
+			}, 100 + 250 * index);
+		})
+		setTimeout(function() {
+			$("#description > p").css("opacity", 1);
+		}, 1400);
 	})
 
 	$("#portfolio").waypoint(function() {
@@ -139,8 +153,8 @@ $(document).ready(function() {
 	$("#for-waypoints").waypoint(function() {
 		$("#background-fill").css("height", "100%");
 		setTimeout(function() {
-			$("#contact a, #contact p").css("opacity", 1);
-		}, 600)
+			$("#contact .name, #contact a, #contact p").css("opacity", 1);
+		}, 1200)
 	})
 
 	// Scrolllll

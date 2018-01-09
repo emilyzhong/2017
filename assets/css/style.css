@@ -27,19 +27,26 @@
 
 #intro {
     margin: 24px 0px;
+    display: none;
 }
 
 #nav {
     margin: 24px auto;
 }
 
-#intro, #nav {
-    display: none;
+#intro a {
+    display: inline;
+    animation: none;
+}
+
+#intro a:hover {
+    transform: translateX(0);
 }
 
 #nav a {
-    display: block;
     margin: 6px 0px;
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
 }
 
 /* ABOUT */
@@ -53,7 +60,7 @@
     top: 50%;
     height: 40vh;
     opacity: 0;
-    transition: 0.5s all;
+    transition: 0.3s all;
 }
 
 #tasks {
@@ -70,6 +77,8 @@
 #tasks a {
     position: relative;
     display: block;
+    transition: 0.8s ease-in-out;
+    opacity: 0;
 }
 
 #description {
@@ -85,6 +94,8 @@
     background: rgba(255, 255, 255, 0.7);
     padding: 10px;
     font-size: 14px; 
+    opacity: 0;
+    transition: 0.8s ease-in-out;
 }
 
 #background-img {
@@ -208,6 +219,7 @@ a {
     text-decoration: none;
     transition: 0.2s all;
     font-family: 'Inconsolata', monospace;
+    display: block;
 }
 
 a:hover {
@@ -234,18 +246,16 @@ a:hover {
     transition: 1.2s ease-in-out;
 }
 
-#contact, #contact .name, #contact a {
+#contact .name, #contact a, #contact p {
     color: white;
+    opacity: 0;
+    transition: opacity 0.6s;
 }
 
 #contact {
     height: 90vh;
     margin-bottom: 0;
     position: relative;
-}
-
-#contact p, #contact a {
-    opacity: 0;
 }
 
 @keyframes sideBounce {
