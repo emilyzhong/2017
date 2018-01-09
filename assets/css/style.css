@@ -248,7 +248,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
-    transition: 1.2s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 #contact .name, #contact a, #contact p {

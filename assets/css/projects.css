@@ -107,7 +107,7 @@ p.text {
     left: 50%;
     transform: translateX(-50%);
     background: var(--emphasis-color);
-    transition: 1.2s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 #for-waypoints {
