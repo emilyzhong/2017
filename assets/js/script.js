@@ -145,9 +145,19 @@ $(document).ready(function() {
 
 	$("#portfolio").waypoint(function() {
 		$(".card-1").css("opacity", 1);
+		$(".card-1 li").each(function(index, elem) {
+			setTimeout(function() {
+				$(elem).css("opacity", 1);
+			}, 300 * (index % 3))
+		});
 		setTimeout(function() {
 			$(".card-2").css("opacity", 1);
-		}, 600)
+			$(".card-2 li").each(function(index, elem) {
+				setTimeout(function() {
+					$(elem).css("opacity", 1);
+				}, 300 * (index % 3))
+			});
+		}, 700)
 	})
 
 	$("#for-waypoints").waypoint(function() {
