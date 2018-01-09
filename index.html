@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html>
-    <head>
+	<head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111160453-1"></script>
         <script>
@@ -10,34 +11,100 @@
           gtag('config', 'UA-111160453-1');
         </script>
 
+        <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
         <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-        <title>Emily under construction</title>
-    </head>
-    <body>
-        <style>
-            html {font-size: 16px}
-            body { width: 100%; height: 100%; position: relative; font-family: 'Karla', sans-serif; font-size: 1.2em; line-height: 2.5em; color: rgba(0, 0, 0, 0.7); margin: 0 auto;} 
-            a {text-decoration: none; color: #95C2EE; font-family: Inconsolata; }
-            a:hover {text-decoration: underline;}
-            div {margin: 10%}
-            /*ul {list-style: none; padding: 0; margin: 0 auto;}*/
-            /*li {margin-left: 20px;}*/
-        </style>
-        <div>
-            Hi there! I'm Emily, and this is my under construction page while I work on my new website. <br> If you want to know more about me, I'm a
-            <ul>
-                <li>Computer science and cognitive science major at <a href="https://berkeley.edu" target="_blank">UC Berkeley</a></li>
-                <li>Engineering Practicum Intern at <a href="https://google.com" target="_blank">Google</a></li>
-                <li>Head instructor for UC Berkeley's <a href="http://wdd.io" target="_blank">Web Design Course</a></li>
-                <li>Diversity director at <a href="https://calhacks.io" target="_blank">Cal Hacks</a></li>
-                <li>Projects developer at <a href="https://projects.dailycal.org" target="_blank">The Daily Californian</a></li>
-                <li>Graphic designer at Berkeley's student-run creative agency, <a href="https://innovativedesign.club" target="_blank">Innovative Design</a>
-                <li>Tutor at <a href="https://cs61a.org">UC Berkeley's introductory programming course</a> staff</li>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+        <title>Emily Zhong</title>
+	</head>
+	<body>
+    <div id="content">
+        <section id="landing">
+            <div class="name">Hi, I'm Emily</div>
+            <div id="intro">
+                <p>I'm a sophomore at UC Berkeley studying computer science and cognitive science, fascinated by how technology affects people and creates experiences.</p>
+                <p>Thanks for stopping by! I hope you enjoy what I have to contribute to the internet.</p>
+            </div>
+            <div id="nav">
+                <a href="#activities" id="activities-link">What I do</a>
+                <a href="#portfolio" id="portfolio-link">Things I've made</a>
+                <a href="#contact" id="contact-link">Contact</a>
+            </div>
+        </section>
+        <section id="activities">
+            <div class="name">What I do</div>
+            <div id="mobile-activities"></div>
+            <div id="together">
+                <div id="tasks"></div>
+                <div id="description"><p></p></div>
+                <div id="background-img"><div></div><img src=""></div>
+            </div>
+        </section> 
+
+
+        <section id="portfolio">
+            <div class="name">Things I've made</div>
+            <div class="cards-container">
+                <div class="card-1">
+                    <img src="assets/img/code.png">
+                    <div class="card-title">
+                        Programming                        
+                    </div>
+                    <ul class="card-links">
+                        <li><a href="projects/where_we_cry.html">Where We Cry</a></li>
+                        <li><a href="" class="coming-soon">Google 2017</a></li>
+                        <li><a href="" class="coming-soon">BearMaps</a></li>
+                    </ul>
+                </div>
+                <div class="card-1">
+                    <img src="assets/img/ux.png">
+                    <div class="card-title">
+                        UX Design                       
+                    </div>
+                    <ul class="card-links">
+                        <li><a href="projects/nutrition_label.html">Nutrition Label Redesign</a></li>
+                    </ul>
+                </div>
+                <div class="card-2">
+                    <img src="assets/img/graphic-design.png">
+                    <div class="card-title">
+                        Graphic Design                       
+                    </div>
+                    <ul class="card-links">
+                        <li><a href="projects/geofilters.html">Geofilters</a></li>
+                        <li><a href="projects/logos.html">Logo Design</a></li>
+                        <li><a href="projects/daily_cal_design.html">Daily Californian</a></li>
+                    </ul>
+                </div>
+                <div class="card-2">
+                    <img src="assets/img/art.png">
+                    <div class="card-title">
+                        Fine Art                     
+                    </div>
+                    <ul class="card-links">
+                        <li><a href="" class="coming-soon">Mixed Media</a></li>
+                        <li><a href="" class="coming-soon">Charcoal</a></li>
+                        <li><a href="" class="coming-soon">Pencil</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="for-waypoints"></div>
+        </section>
+        <section id="contact">
+            <div id="background-fill"></div>
+            <div class="name">Contact Me!</div>
+            <p>You can find and learn more about me at the links below. I'm always down for a cup of coffee, and I look forward to meeting you!</p>
+            <ul id="contacts">
+                <li><a href="assets/Emily Zhong Resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="mailto:emily.zhong@berkeley.edu" target="_blank">Email</a></li>
+                <li><a href="https://github.com/emilyzhong" target="_blank">Github</a></li>
+                <li><a href="https://linkedin.com/in/emily-zhong" target="_blank">LinkedIn</a></li>
             </ul>
-            You can check out my <a href="2016/" target="_blank">previous site</a>, <a href="wdd/game.html" target="_blank">a game</a> made in collaboration with <a href="http://zkirby.github.io" target="_blank">Zachary Kirby</a>, or my <a href="banana/banana.html" target="_blank">&#x1F34C;s</a>.<br>
-            Thanks for letting me humor you while I work on things to come! <br><br>
-            - Emily
-        </div>
-    </body>
+        </section>
+    </div>
+	</body>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </html>
