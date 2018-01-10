@@ -36,14 +36,6 @@ $(document).ready(function() {
 
 	// FOOTER
 
-	// waypoints
-	$("#for-waypoints").waypoint(function() {
-		$("#footer").css("height", "80vh");
-		setTimeout(function() {
-			$("#footer-container").css("opacity", 1);
-		}, 600)
-	})
-
 	// Hacky column things hahaha
 	// 2 categories per column.
 	let newColumn = true;
@@ -104,5 +96,28 @@ $(document).ready(function() {
 
 	$("#lightbox-image img").click(function(e) {
 		e.stopPropagation();
+	})
+
+	// WAYPOINTS
+	$("#footer").waypoint({
+		handler: function() {
+			$("#footer").css("height", "80vh");
+			setTimeout(function() {
+				$("#footer-container").css("opacity", 1);
+			}, 600)
+		},
+		offset: '60%'
+	})
+
+	$(".section-image").waypoint({
+		handler: function() {
+		$(this).children('img')
+				.css({'top': '50%', 
+					'left': '50%',
+					'transform': 'scale(1) translate(-50%, -50%)',
+					'opacity': 1
+				})
+		},
+		offset: '70%'
 	})
 })

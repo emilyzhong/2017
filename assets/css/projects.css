@@ -72,6 +72,15 @@ img {
     transition: 0.4s ease-out;
 }
 
+.section-image img {
+    position: absolute;
+    top: calc(50% * 0.9);
+    left: calc(50% * 0.9);
+    transform: scale(0.9) translate(-50%, -50%);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
 .section-image:hover img {
     position: absolute;
     top: calc(50% * 1.1);
@@ -109,11 +118,6 @@ p.text {
     background: var(--emphasis-color);
     transition: 1s ease-in-out;
 }
-
-#for-waypoints {
-    position: absolute;
-    top: -80vh;
-}
  
 #footer-container {
     margin-top: 40px;
@@ -123,6 +127,7 @@ p.text {
     transform: translateX(-50%);
     color: white;
     opacity: 0;
+    max-height: 80vh;
 }
 
 .footer-header {
