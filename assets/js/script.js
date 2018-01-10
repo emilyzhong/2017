@@ -165,11 +165,14 @@ $(document).ready(function() {
 		}, 700)
 	})
 
-	$("#for-waypoints").waypoint(function() {
-		$("#background-fill").css("height", "100%");
-		setTimeout(function() {
-			$("#contact .name, #contact a, #contact p").css("opacity", 1);
-		}, 1200)
+	$("#contact").waypoint({
+		handler: function() {
+			$("#background-fill").css("height", "100%");
+			setTimeout(function() {
+				$("#contact .name, #contact a, #contact p").css("opacity", 1);
+			}, 1200)
+		},
+		offset: '60%'
 	})
 
 	// Scrolllll
