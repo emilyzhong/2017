@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	setTimeout(function() {
-		$(".name").fadeIn("slow");
+		$(".name").css("opacity", 1);
 	}, 200);
 
 	setTimeout(function() {
-		$("#intro").fadeIn(900);
+		$("#intro").css("opacity", 1);
 	}, 900);
 
 	$("#nav > a").each(function(i, elem) {
@@ -42,7 +42,6 @@ $(document).ready(function() {
 	}
 
 	// ACTIVITIES
-	const start = task["Google"];
 
 	/** Shortens length of string to given character length and adds ellipses **/
 	let shorten = function(str, char) {
@@ -94,20 +93,18 @@ $(document).ready(function() {
 		}
 	})
 
-
-	$("#background-img img").attr("src", "assets/img/" + start.img);
-	$("#description p").text(start.descrip);
-	$("#description").show()
-
+	let defaultText = true;
+	
 	// Hovering
 	$("#tasks > a").hover(function() {
-		let selectedTask = task[this.textContent];
 
+		let selectedTask = task[this.textContent];
 		let image = $("#background-img img");
 		let description = $("#description p");
 		let newSrc = "assets/img/" + selectedTask.img
 
 		description.text(selectedTask.descrip);
+		description.removeClass("flash-class");
 		$("#description").show()
 
 		if (image.attr("src") != newSrc) {
@@ -131,16 +128,24 @@ $(document).ready(function() {
 
 	// Waypoints
 	$("#activities").waypoint(function() {
-		$("#together").css("opacity", 1);
 		$("#mobile-activities").css("opacity", 1)
+
+		$("#description").css("transform", "scale(1.2)");
+		setTimeout(function() {
+			$("#together").css("transform", "scale(1)");
+			$("#together").css("opacity", 1);
+			$("#description").css("transform", "scale(1)");
+			$("#description p").addClass("flash-class");
+		}, 900)
+
 		$("#tasks > a").each(function(index, elem) {
 			setTimeout(function() {
 				$(elem).css("opacity", 1);
-			}, 100 + 250 * index);
+			}, 500 + 250 * index);
 		})
-		setTimeout(function() {
-			$("#description > p").css("opacity", 1);
-		}, 1400);
+		// setTimeout(function() {
+		// 	$("#description > p").css("opacity", 1);
+		// }, 1400);
 	})
 
 	$("#portfolio").waypoint(function() {
