@@ -111,7 +111,7 @@ $(document).ready(function() {
 
 	$(".section-image").waypoint({
 		handler: function() {
-		$(this).children('img')
+		$(this).find('img')
 				.css({'top': '50%', 
 					'left': '50%',
 					'transform': 'scale(1) translate(-50%, -50%)',
