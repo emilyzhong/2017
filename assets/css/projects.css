@@ -127,7 +127,7 @@ p.text {
     transform: translateX(-50%);
     color: white;
     opacity: 0;
-    max-height: 80vh;
+    min-height: calc(80vh - 40px);
 }
 
 .footer-header {
