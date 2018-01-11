@@ -94,7 +94,7 @@
 }
 
 #description p {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     padding: 10px;
     font-size: 14px; 
     transition: 0.8s ease-in-out;
@@ -110,7 +110,7 @@
     z-index: -1;
     overflow: hidden;
     background: white;
-    background-color: var(--emphasis-color);
+    background-color: rgba(149,194,238, 0.6); /* emphasis color + opacity */
 }
 
 /*
