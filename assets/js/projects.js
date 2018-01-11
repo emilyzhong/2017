@@ -84,14 +84,16 @@ $(document).ready(function() {
 			let newImage = image.substring(0, 14) + "lightbox-images/" + image.substring(14, image.length) 
 
 			$("#lightbox-image img").attr("src", newImage)
-			$("#lightbox").show();
+			$("#lightbox").attr("style", "display: block");
 			$("html, body, #pseudobody").css("overflow", "hidden");
 		}
 	})
 
 	$("#overlay, #lightbox-image").click(function() {
-		$("#lightbox").hide()
-		$("html, body, #pseudobody").css("overflow", "scroll");
+		// For some reason if I just change the CSS properties
+		// (overflow specifically) the footer won't work ... weird.
+		$("#lightbox").removeAttr("style");
+		$("html, body, #pseudobody").removeAttr("style"); 
 	})
 
 	$("#lightbox-image img").click(function(e) {
@@ -106,7 +108,7 @@ $(document).ready(function() {
 				$("#footer-container").css("opacity", 1);
 			}, 600)
 		},
-		offset: '60%'
+		offset: '80%'
 	})
 
 	$(".section-image").waypoint({
