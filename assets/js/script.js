@@ -127,25 +127,27 @@ $(document).ready(function() {
 	})
 
 	// Waypoints
+	let firstScrollthrough = true;
+
 	$("#activities").waypoint(function() {
 		$("#mobile-activities").css("opacity", 1)
 
-		$("#description").css("transform", "scale(1.2)");
-		setTimeout(function() {
-			$("#together").css("transform", "scale(1)");
-			$("#together").css("opacity", 1);
-			$("#description").css("transform", "scale(1)");
-			$("#description p").addClass("flash-class");
-		}, 900)
-
-		$("#tasks > a").each(function(index, elem) {
+		if (firstScrollthrough) {
+			$("#description").css("transform", "scale(1.2)");
 			setTimeout(function() {
-				$(elem).css("opacity", 1);
-			}, 500 + 250 * index);
-		})
-		// setTimeout(function() {
-		// 	$("#description > p").css("opacity", 1);
-		// }, 1400);
+				$("#together").css("transform", "scale(1)");
+				$("#together").css("opacity", 1);
+				$("#description").css("transform", "scale(1)");
+				$("#description p").addClass("flash-class");
+			}, 900)
+
+			$("#tasks > a").each(function(index, elem) {
+				setTimeout(function() {
+					$(elem).css("opacity", 1);
+				}, 500 + 250 * index);
+			})
+		}
+		firstScrollthrough = false;
 	})
 
 	$("#portfolio").waypoint(function() {
