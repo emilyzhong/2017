@@ -48,6 +48,10 @@ $(document).ready(function() {
 		changeColors();
 	})
 
+	$("#reset").click(function() {
+		resetColors();
+	});
+
 	var changeColors = function() {
 
 		Object.keys(fills).forEach(function(hex) {
@@ -89,6 +93,20 @@ $(document).ready(function() {
 		    	strokes[stroke] = [element];
 		    }
 		}
+	}
+
+	var resetColors = function() {
+		Object.keys(fills).forEach(function(hex) {
+			fills[hex].forEach(function(element) {
+				element.setAttribute("fill", hex)
+			})
+		})
+
+		Object.keys(strokes).forEach(function(hex) {
+			strokes[hex].forEach(function(element) {
+				element.setAttribute("stroke", hex)
+			})
+		})
 	}
 
 	setUp();	
