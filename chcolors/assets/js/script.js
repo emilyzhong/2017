@@ -3,8 +3,7 @@ $(document).ready(function() {
 	var color1 = "#97d0ed";
 	var color2 = "#3d9bc2";
 	var color3 = "#80c6dd";
-	var color4 = "#3c9bc2";
-	var color5 = "#c4e8f1";
+	var color4 = "#c4e8f1";
 
 	var fills = {} // key = hex code, value = list of elements
 	var strokes = {}
@@ -18,10 +17,10 @@ $(document).ready(function() {
 		"#98cfec": 1,
 		"#3d9bc2": 2,
 		"#80c6dd": 3,
-		"#3c9bc2": 4,
-		"#3b9bc2": 4,
-		"#3f9bc1": 4,
-		"#c4e8f1": 5
+		"#3c9bc2": 2,
+		"#3b9bc2": 2,
+		"#3f9bc1": 2,
+		"#c4e8f1": 4
 	}
 
 	$("#generate").click(function() {
@@ -39,10 +38,6 @@ $(document).ready(function() {
 
 		if($("#color4").val()) {
 			color4 = "#" + $("#color4").val();
-		}
-
-		if($("#color5").val()) {
-			color5 = "#" + $("#color5").val();
 		}
 
 		changeColors();
