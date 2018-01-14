@@ -3,15 +3,15 @@ $(document).ready(function() {
 	// CONSTANTS
 	let footerLinks = {
 		"User Experience Design": {
-			"Nutrition Label": "nutrition_label.html",
+			"Nutrition Label": "nutrition_label",
 		},
 		"Graphic Design": {
-			"Geofilters": "geofilters.html",
-			"Logo Design": "logos.html",
-			"Daily Cal Design": "daily_cal_design.html",
+			"Geofilters": "geofilters",
+			"Logo Design": "logos",
+			"Daily Cal Design": "daily_cal_design",
 		},
 		"Programming": {
-			"Where We Cry": "where_we_cry.html",
+			"Where We Cry": "where_we_cry",
 		},
 		// "Fine Art": {
 

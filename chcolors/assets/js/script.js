@@ -82,11 +82,15 @@ $(document).ready(function() {
 		    	fills[fill] = [element];
 		    }
 
+
 		    if (strokes[stroke]) {
 		    	strokes[stroke].push(element);
 		    } else {
 		    	strokes[stroke] = [element];
 		    }
+
+		    $(element).addClass(fill);
+		    $(element).addClass(stroke);
 		}
 	}
 
