@@ -13,9 +13,9 @@ $(document).ready(function() {
 		"Programming": {
 			"Where We Cry": "where_we_cry",
 		},
-		// "Fine Art": {
-
-		// }
+		"Fine Art": {
+			"Conceptual": "conceptual_art",
+		}
 	};
 
 
