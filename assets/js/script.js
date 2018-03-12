@@ -25,14 +25,14 @@ $(document).ready(function() {
 					"descrip": "I'm a head instructor of the Web Design DeCal, a course that teaches front end web design at UC Berkeley. We focus on teaching HTML, CSS, jQuery, and UI/UX principles to students of all majors"
 				},
 				"Blueprint": {
-					"img": "wdd.jpg",
+					"img": "bp.jpg",
 					"url": "https://calblueprint.io",
-					"descrip": "Blueprint is a tech club at Berkeley that develops pro-bono applications for non profits. I currently work on the Replate team, which helps connect businesses with extra food to local shelters."
+					"descrip": "Blueprint is a tech club at Berkeley that develops pro-bono applications for non profits. I currently work on the Re-plate team, which helps connect businesses with surplus food to local shelters."
 				},
 				"Cal Hacks": {
 					"img": "calhacks.jpg", 
 					"url": "https://calhacks.io",
-					"descrip": "As diversity director at Cal Hacks, I work on redefining what it means to be a hacker. In 2017, I launched CubStart, a mentorship program that guides beginner hackers through their first hackathon" 
+					"descrip": "I work on redefining what it means to be a hacker and creator as the diversity director at Cal Hacks. In 2017, I launched CubStart, a mentorship program that guides beginner hackers through their first hackathon" 
 				},
 				
 				"Daily Cal": {
@@ -40,11 +40,11 @@ $(document).ready(function() {
 					"url": "https://projects.dailycal.org",
 					"descrip": "As a project developer at the Daily Californian, I use data and code to create interactive visual stories about UC Berkeley and the surrounding city"
 				},
-				"Innovative Design": {
-					"img": "innod.jpg",
-					"url": "http://innovativedesign.club",
-					"descrip": "I'm a graphic designer at Innovative design, a student-run creative agency at UC Berkeley, where I do various design work for off-campus clients using my favorite Adobe Creative Cloud tools!"
-				}
+				// "Innovative Design": {
+				// 	"img": "innod.jpg",
+				// 	"url": "http://innovativedesign.club",
+				// 	"descrip": "I'm a graphic designer at Innovative design, a student-run creative agency at UC Berkeley, where I do various design work for off-campus clients using my favorite Adobe Creative Cloud tools!"
+				// }
 	}
 
 	// ACTIVITIES
@@ -110,7 +110,7 @@ $(document).ready(function() {
 		let newSrc = "assets/img/" + selectedTask.img
 
 		description.text(selectedTask.descrip);
-		description.removeClass("flash-class");
+		description.removeClass("flash-class");      
 		$("#description").show()
 
 		if (image.attr("src") != newSrc) {
@@ -157,20 +157,19 @@ $(document).ready(function() {
 	})
 
 	$("#portfolio").waypoint(function() {
-		$(".card-1").css("opacity", 1);
-		$(".card-1 li").each(function(index, elem) {
-			setTimeout(function() {
-				$(elem).css("opacity", 1);
-			}, 300 * (index % 3))
-		});
+		$(".card:first-child, .card:nth-child(2)").css("opacity", 1);
 		setTimeout(function() {
-			$(".card-2").css("opacity", 1);
-			$(".card-2 li").each(function(index, elem) {
-				setTimeout(function() {
-					$(elem).css("opacity", 1);
-				}, 300 * (index % 3))
-			});
-		}, 700)
+			$(".card:nth-child(3), .card:nth-child(4)").css("opacity", 1);
+		}, 200);
+
+		for (i = 1; i < 4; i++) {
+			var elem = $(".card li:nth-child(" + i + ")");
+			(function(elem, i) {
+        		setTimeout(function() {
+        			changeOpacity(elem); 
+        		}, 300 * (i + 2));
+        	})(elem, i);
+		}
 	})
 
 	$("#contact").waypoint({
@@ -202,4 +201,8 @@ $(document).ready(function() {
 	      // Call the scroll function
 	    goToByScroll(this.id);           
 	});
+
+	var changeOpacity = (elem) => {
+		$(elem).css("opacity", 1);
+	}
 });
