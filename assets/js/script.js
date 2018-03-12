@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	setTimeout(function() {
-		$(".name").css("opacity", 1);
+		changeOpacity(".name");
 	}, 200);
 
 	setTimeout(function() {
-		$("#intro").css("opacity", 1);
+		changeOpacity("#intro");
 	}, 900);
 
 	$("#nav > a").each(function(i, elem) {
 		setTimeout(function() {
-			$(elem).css("opacity", 1);
+			changeOpacity($(elem));
 		}, 1500 + 300 * i);
 	});
 
@@ -136,20 +136,20 @@ $(document).ready(function() {
 	let firstScrollthrough = true;
 
 	$("#activities").waypoint(function() {
-		$("#mobile-activities").css("opacity", 1)
+		changeOpacity("#mobile-activities");
 
 		if (firstScrollthrough) {
 			$("#description").css("transform", "scale(1.2)");
 			setTimeout(function() {
 				$("#together").css("transform", "scale(1)");
-				$("#together").css("opacity", 1);
+				changeOpacity("#together");
 				$("#description").css("transform", "scale(1)");
 				$("#description p").addClass("flash-class");
 			}, 900)
 
 			$("#tasks > a").each(function(index, elem) {
 				setTimeout(function() {
-					$(elem).css("opacity", 1);
+					changeOpacity($elem);
 				}, 500 + 250 * index);
 			})
 		}
@@ -157,9 +157,9 @@ $(document).ready(function() {
 	})
 
 	$("#portfolio").waypoint(function() {
-		$(".card:first-child, .card:nth-child(2)").css("opacity", 1);
+		changeOpacity(".card:first-child, .card:nth-child(2)")
 		setTimeout(function() {
-			$(".card:nth-child(3), .card:nth-child(4)").css("opacity", 1);
+			changeOpacity(".card:nth-child(3), .card:nth-child(4)");
 		}, 200);
 
 		for (i = 1; i < 4; i++) {
@@ -176,7 +176,7 @@ $(document).ready(function() {
 		handler: function() {
 			$("#background-fill").css("height", "100%");
 			setTimeout(function() {
-				$("#contact .name, #contact a, #contact p").css("opacity", 1);
+				changeOpacity("#contact .name, #contact a, #contact p");
 			}, 1200)
 		},
 		offset: '60%'
