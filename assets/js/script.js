@@ -149,7 +149,7 @@ $(document).ready(function() {
 
 			$("#tasks > a").each(function(index, elem) {
 				setTimeout(function() {
-					changeOpacity($elem);
+					changeOpacity($(elem));
 				}, 500 + 250 * index);
 			})
 		}
