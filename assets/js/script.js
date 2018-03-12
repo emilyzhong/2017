@@ -19,20 +19,26 @@ $(document).ready(function() {
 					"url": "https://google.com",
 					"descrip": "In summer 2017, I interned at Google's Irvine campus as part of their EP program, where I worked on the front end of an internal data visualization tool, using JavaScript, d3, AngularJs, and CSS"
 				},
-				"Daily Cal": {
-					"img": "dailycal.jpg", 
-					"url": "http://projects.dailycal.org",
-					"descrip": "As a project developer at the Daily Californian, I use data and code to create interactive visual stories about UC Berkeley and the surrounding city"
-				},
-				"Cal Hacks": {
-					"img": "calhacks.jpg", 
-					"url": "http://calhacks.io",
-					"descrip": "As diversity director at Cal Hacks, I work on redefining what it means to be a hacker. In 2017, I launched CubStart, a mentorship program that guides beginner hackers through their first hackathon" 
-				},
 				"Web Design DeCal": {
 					"img": "wdd.jpg",
 					"url": "http://wdd.io",
 					"descrip": "I'm a head instructor of the Web Design DeCal, a course that teaches front end web design at UC Berkeley. We focus on teaching HTML, CSS, jQuery, and UI/UX principles to students of all majors"
+				},
+				"Blueprint": {
+					"img": "wdd.jpg",
+					"url": "https://calblueprint.io",
+					"descrip": "Blueprint is a tech club at Berkeley that develops pro-bono applications for non profits. I currently work on the Replate team, which helps connect businesses with extra food to local shelters."
+				},
+				"Cal Hacks": {
+					"img": "calhacks.jpg", 
+					"url": "https://calhacks.io",
+					"descrip": "As diversity director at Cal Hacks, I work on redefining what it means to be a hacker. In 2017, I launched CubStart, a mentorship program that guides beginner hackers through their first hackathon" 
+				},
+				
+				"Daily Cal": {
+					"img": "dailycal.jpg", 
+					"url": "https://projects.dailycal.org",
+					"descrip": "As a project developer at the Daily Californian, I use data and code to create interactive visual stories about UC Berkeley and the surrounding city"
 				},
 				"Innovative Design": {
 					"img": "innod.jpg",
