@@ -167,7 +167,7 @@ $(document).ready(function() {
 			(function(elem, i) {
         		setTimeout(function() {
         			changeOpacity(elem); 
-        		}, 300 * (i + 2));
+        		}, 200 * (i + 2));
         	})(elem, i);
 		}
 	})

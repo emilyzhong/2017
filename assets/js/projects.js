@@ -2,14 +2,15 @@ $(document).ready(function() {
 
 	// CONSTANTS
 	let footerLinks = {
-		"User Experience Design": {
+		"Design": {
 			"Nutrition Label": "nutrition_label",
+			"Graphic Design": "graphic_design"
 		},
-		"Graphic Design": {
-			"Geofilters": "geofilters",
-			"Logo Design": "logos",
-			"Daily Cal Design": "daily_cal_design",
-		},
+		// "Graphic Design": {
+		// 	"Geofilters": "geofilters",
+		// 	"Logo Design": "logos",
+		// 	"Daily Cal Design": "daily_cal_design",
+		// },
 		"Programming": {
 			"Where We Cry": "where_we_cry",
 		},
@@ -26,10 +27,17 @@ $(document).ready(function() {
 	    let height = image.height();
 	    let width = image.width();
 
-	    let aspectRatio = height / width * 100;
+	    let heightAspectRatio = height / width * 100;
+	    let widthAspectRatio = width / height;
 
-	    if (aspectRatio) {
-	    	$(this).css("padding-top", aspectRatio + "%");
+	    if (height > $(window).height() * 0.8) {
+	    	image.height($(window).height() * 0.8);
+	    	image.width(image.height() * widthAspectRatio);
+	    } 
+
+	    if (heightAspectRatio) {
+	    	$(this).css("width", image.height() * widthAspectRatio);
+	    	$(this).css("padding-top", image.height() + "px");
 	    }
 	});
 
