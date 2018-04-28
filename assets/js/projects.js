@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 	    if (heightAspectRatio) {
 	    	$(this).css("width", image.height() * widthAspectRatio);
-	    	$(this).css("padding-top", image.height() + "px");
+	    	// $(this).css("padding-top", image.height() + "px");
 	    }
 	});
 
