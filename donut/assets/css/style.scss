@@ -1,0 +1,125 @@
+@import "animations.scss";
+
+$black: #4a4a4a;
+$gray: #676767;
+$pink: #F9AC91;
+
+#image-container {
+	height: 330px;
+	width: 330px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 0.8;
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		min-height: 100%;
+		min-width: 100%;
+		width: 100%;
+		background: $pink;
+		
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+	}
+}
+
+#svg-container {
+	height: 300px;
+	width: 300px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	svg {
+		overflow: visible;
+		height: 300px;
+		width: 300px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		stroke-dasharray: 1300px;
+		stroke-dashoffset: 1300px;
+		#circle {
+			fill: transparent;
+			stroke: rgba(255, 255, 255, 0.7);
+			stroke-width: 150px;
+		}
+	}
+
+	#text {
+		position: absolute;
+		z-index: 1;
+		transform: translateX(-30%);
+		animation-fill-mode: both;
+		transition: 1s top;
+		#title {
+			font-family: 'Oswald', sans-serif;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $black;
+			font-size: 3em;
+			letter-spacing: 5px;
+		}
+		#description {
+			font-family: 'PT Mono', monospace;
+			color: $gray;
+			line-height: 1.9em;
+			letter-spacing: 1px;
+		}
+
+		&.default {
+			top: 80px;
+		}
+
+		&.move-up {
+			top: 50px;
+		}
+	}
+}
+
+
+main {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+}
+
+html, body {
+	margin: 0 auto;
+	color: $black;
+}
+
+body {
+	height: 300vh;
+	width: 100vw;
+	position: relative;
+}
+
+// RESET
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
