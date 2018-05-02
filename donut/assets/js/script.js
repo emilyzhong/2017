@@ -30,14 +30,14 @@ $(document).ready(function() {
 	})
 
 
-	function changeContent(i, active=true) {
+	function changeContent() {
 		currPosition = $(window).scrollTop();
 		let percentageOfStroke = 1 - currPosition / WINDOW_HEIGHT;
 		let newOffset = TOTAL_OFFSET * percentageOfStroke;
 		$("#circle").attr("stroke-dashoffset", newOffset + "px");
 
 		prevIndex = currIndex;
-		currIndex = Math.max(-1 * Math.floor(percentageOfStroke), 0);
+		currIndex = Math.min(Math.max(-1 * Math.floor(percentageOfStroke), 0), NUM_SECTIONS - 1);
 		console.log(currIndex)
 
 		if (prevIndex != currIndex) {
@@ -49,7 +49,7 @@ $(document).ready(function() {
 				$("#text").addClass("move-up");
 			}).fadeIn(400);
 
-			$("#donut-image").fadeOut('fast', function() {
+			$("#donut-image").stop().fadeOut('fast', function() {
 				$("#donut-image").attr("src", sectionInfo.imageSrc);
 			}).fadeIn('fast');
 		}
