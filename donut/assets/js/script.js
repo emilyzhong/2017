@@ -22,50 +22,25 @@ $(document).ready(function() {
 		}
 	]
 
-	let currPosition = $(window).scrollTop();
-	let currIndex = Math.floor(currPosition / WINDOW_HEIGHT);
+	let currIndex = null;
 
-	let sectionInfo = SECTIONS[currIndex];
-
-	$("#title").text(sectionInfo.title);
-	$("#description").text(sectionInfo.description);
-	$("#donut-image").attr("src", sectionInfo.imageSrc);
-
-	let canChange = false;
-	let prevIndex = currIndex;
+	changeContent();
 	$(window).scroll(function() {
+		changeContent();
+	})
+
+
+	function changeContent(i, active=true) {
 		currPosition = $(window).scrollTop();
 		let percentageOfStroke = 1 - currPosition / WINDOW_HEIGHT;
 		let newOffset = TOTAL_OFFSET * percentageOfStroke;
 		$("#circle").attr("stroke-dashoffset", newOffset + "px");
-		let modInfo = mod(newOffset, TOTAL_OFFSET);
 
-		if (modInfo <= 50 && canChange) {
-			prevIndex = currIndex;
-			currIndex = Math.min(currIndex + 1, NUM_SECTIONS - 1);
+		prevIndex = currIndex;
+		currIndex = Math.max(-1 * Math.floor(percentageOfStroke), 0);
+		console.log(currIndex)
 
-			if (prevIndex != currIndex) {
-				changeText(currIndex, canChange) 
-			}
-			canChange = false;
-		
-		} else if (modInfo >= TOTAL_OFFSET - 50 && canChange) {
-			prevIndex = currIndex;
-			currIndex = Math.max(0, currIndex - 1);
-
-			if (prevIndex != currIndex) {
-				changeText(currIndex, canChange) 
-			}
-			canChange = false;
-		} 
-
-		if (modInfo > 50 && modInfo < TOTAL_OFFSET - 50) {
-			canChange = true;
-		}
-	})
-
-	function changeText(i, active=true) {
-		if (active) {
+		if (prevIndex != currIndex) {
 			$("#text").removeClass("move-up")
 			sectionInfo = SECTIONS[currIndex];
 			$("#text *").fadeOut(400, function() {

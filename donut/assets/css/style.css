@@ -27,8 +27,8 @@
   to {
     stroke-dashoffset: 0px; } }
 #image-container {
-  height: 330px;
-  width: 330px;
+  height: 329px;
+  width: 329px;
   display: block;
   position: absolute;
   top: 50%;
@@ -44,8 +44,7 @@
     transform: translate(0, -50%);
     min-height: 100%;
     min-width: 100%;
-    width: 100%;
-    background: #F9AC91; }
+    width: 100%; }
   #image-container:after {
     content: "";
     display: block;
@@ -55,8 +54,8 @@
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 50%;
-    width: 150px;
-    height: 150px; }
+    width: 153px;
+    height: 153px; }
 
 #svg-container {
   height: 300px;
@@ -78,7 +77,7 @@
     stroke-dashoffset: 1300px; }
     #svg-container svg #circle {
       fill: transparent;
-      stroke: rgba(255, 255, 255, 0.7);
+      stroke: white;
       stroke-width: 150px; }
   #svg-container #text {
     position: absolute;
