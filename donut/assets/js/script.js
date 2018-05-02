@@ -15,7 +15,11 @@ $(document).ready(function() {
 			imageSrc: "assets/img/donut.jpg",
 			description: "This is a donut ahahaha"
 		},
-		{}
+		{
+			title: "THIRD Page",
+			imageSrc: "assets/img/donut2.jpg",
+			description: "This is a donut2 ahahaha"
+		}
 	]
 
 	let currPosition = $(window).scrollTop();
