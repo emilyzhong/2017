@@ -43,7 +43,7 @@ $(document).ready(function() {
 		if (prevIndex != currIndex) {
 			$("#text").removeClass("move-up")
 			sectionInfo = SECTIONS[currIndex];
-			$("#text *").fadeOut(400, function() {
+			$("#text *").stop().fadeOut(400, function() {
 				$("#title").text(sectionInfo.title);
 				$("#description").text(sectionInfo.description);
 				$("#text").addClass("move-up");
