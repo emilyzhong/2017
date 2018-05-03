@@ -26,6 +26,46 @@
     stroke-dashoffset: -2000px; }
   to {
     stroke-dashoffset: 0px; } }
+nav {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 24px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  nav .nav-section {
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    max-width: 300px;
+    margin-right: 16px; }
+    nav .nav-section h3 {
+      font-weight: 400;
+      cursor: pointer; }
+    nav .nav-section .nav-item-container {
+      display: flex;
+      align-items: center;
+      transition: 0.4s max-width; }
+      nav .nav-section .nav-item-container .nav-item {
+        height: 8px;
+        width: 8px;
+        background: #676767;
+        border-radius: 50%;
+        border: 12px solid white;
+        margin-left: 8px;
+        cursor: pointer;
+        opacity: 0.5; }
+      nav .nav-section .nav-item-container .selected-nav {
+        opacity: 1; }
+    nav .nav-section .hidden {
+      max-width: 0;
+      overflow: hidden; }
+
 #image-container {
   height: 329px;
   width: 329px;
@@ -44,7 +84,8 @@
     transform: translate(0, -50%);
     min-height: 100%;
     min-width: 100%;
-    width: 100%; }
+    width: 100%;
+    opacity: 0.7; }
   #image-container:after {
     content: "";
     display: block;
@@ -82,9 +123,10 @@
   #svg-container #text {
     position: absolute;
     z-index: 1;
-    transform: translateX(-30%);
+    transform: translateX(-80%);
     animation-fill-mode: both;
-    transition: 1s top; }
+    transition: 1s;
+    top: 50%; }
     #svg-container #text #title {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
@@ -98,9 +140,9 @@
       line-height: 1.9em;
       letter-spacing: 1px; }
     #svg-container #text.default {
-      top: 80px; }
+      transform: translateY(calc(-50% + 10px)) translateX(-50%); }
     #svg-container #text.move-up {
-      top: 50px; }
+      transform: translateY(-50%) translateX(-50%); }
 
 main {
   width: 100vw;

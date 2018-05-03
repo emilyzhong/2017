@@ -4,6 +4,61 @@ $black: #4a4a4a;
 $gray: #676767;
 $pink: #F9AC91;
 
+nav {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 24px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nav-section {
+    	display: flex;
+    	align-items: center;
+    	font-family: 'Oswald', sans-serif;
+    	letter-spacing: 1px;
+    	font-size: 12px;
+    	text-transform: uppercase;
+    	max-width: 300px;
+    	margin-right: 16px;
+
+    	h3 {
+	    	font-weight: 400;
+	    	cursor: pointer;
+    	}
+
+    	.nav-item-container {
+    		display: flex;
+    		align-items: center;
+    		transition: 0.4s max-width;
+
+    		.nav-item {
+    			height: 8px;
+    			width: 8px;
+    			background: $gray;
+    			border-radius: 50%;
+    			border: 12px solid white;
+    			margin-left: 8px;
+    			cursor: pointer;
+    			opacity: 0.5;
+    		}
+
+    		.selected-nav {
+    			opacity: 1;
+    		}
+
+
+    	}
+
+    	.hidden {
+			max-width: 0;
+			overflow: hidden;
+		}
+    }
+}
+
 #image-container {
 	height: 329px;
 	width: 329px;
@@ -24,6 +79,7 @@ $pink: #F9AC91;
 		min-height: 100%;
 		min-width: 100%;
 		width: 100%;
+		opacity: 0.7;
 	}
 
 	&:after {
@@ -69,9 +125,10 @@ $pink: #F9AC91;
 	#text {
 		position: absolute;
 		z-index: 1;
-		transform: translateX(-30%);
+		transform: translateX(-80%);
 		animation-fill-mode: both;
-		transition: 1s top;
+		transition: 1s;
+		top: 50%;
 		#title {
 			font-family: 'Oswald', sans-serif;
 			font-weight: 700;
@@ -88,11 +145,11 @@ $pink: #F9AC91;
 		}
 
 		&.default {
-			top: 80px;
+			transform: translateY(calc(-50% + 10px)) translateX(-50%);
 		}
 
 		&.move-up {
-			top: 50px;
+			transform: translateY(-50%) translateX(-50%);
 		}
 	}
 }
