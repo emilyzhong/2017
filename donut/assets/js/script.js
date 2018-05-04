@@ -27,7 +27,7 @@ $(document).ready(function() {
 		},
 		{
 			title: "Cal Hacks: this is IT",
-			imageSrc: "assets/img/this-is-it.png",
+			imageSrc: "assets/img/this-is-it.jpg",
 			description: "A website about this is IT, a three part speaker-workshop series on diverse perspectives in entrepreneurship and technology. Animations created with CSS and SVGs"
 		},
 		{
@@ -41,54 +41,85 @@ $(document).ready(function() {
 			description: "As the head instructor of the Web Design DeCal, I've taught over 250 beginners how to design and code static websites."
 		},
 		{
-			title: "Cal Hacks",
-			imageSrc: "assets/img/wdd.jpg",
-			description: "As the head instructor of the Web Design DeCal, I've taught over 250 beginners how to design and code static websites."
+			title: "Blueprint",
+			imageSrc: "assets/img/bp.png",
+			description: "Every semester, I develop for nonprofits through Blueprint, a student organization that focuses on technology for social good."
 		},
+		{
+			title: "Cal Hacks",
+			imageSrc: "assets/img/ch.png",
+			description: "I help organize the largest collegiate hackathon, Cal Hacks, with an emphasis on diversity initiatives to break entry barriers to hackathon culture."
+		},
+		// {
+		// 	title: "Data Journalism @ The Daily Cal",
+		// 	imageSrc: "assets/img/ch.png",
+		// 	description: "I help organize the largest collegiate hackathon, Cal Hacks, with an emphasis on diversity initiatives to break entry barriers to hackathon culture."
+		// },
+		// {
+		// 	title: "Innovative Design",
+		// 	imageSrc: "assets/img/ch.png",
+		// 	description: "I help organize the largest collegiate hackathon, Cal Hacks, with an emphasis on diversity initiatives to break entry barriers to hackathon culture."
+		// },
 	]
 
 	const WINDOW_HEIGHT = $(window).height();
 	const DOCUMENT_HEIGHT = $(document).height();
 	const NUM_SECTIONS = SECTIONS.length;
 	const TOTAL_OFFSET = 1300;
-
-	
+	const delay = 300;
 	const navItems = $(".nav-item");
 
-	$("body").css("height", (NUM_SECTIONS + 1) * 100 + "vh");
-
+	let lastClick = 0;
+	let changeContentEnabled = true;
+	let currentOffset = 0;
 	let currIndex = null;
+
+	$("body").css("height", (NUM_SECTIONS + 1) * 100 + "vh");
 	changeContent();
 	$(window).scroll(function() {
-		changeContent();
+		if (changeContentEnabled) {
+			changeContent();
+		}
 	})
 
 	$(".nav-item").click(function() {
-		event.stopPropagation();
+		changeContentEnabled = false;
 		let navIndex = navItems.index(this);
-		changeContent(navIndex);
-	})
 
-	$(".nav-title").click(function() {
-		$(this).next().toggleClass("hidden");
-	})
+		$("#circle").css("stroke-dashoffset", 0);
+		$("#circle").animate({"stroke-dashoffset": -1300 + "px"}, 1000);
 
+		if (mod(navIndex, 2) == 1) {
+			// automatically calls changeContent
+			$(window).scrollTop((navIndex + 1) * WINDOW_HEIGHT);
+		} else {
+			// automatically calls changeContent
+			$(window).scrollTop((navIndex) * WINDOW_HEIGHT + 1);
+		}
+
+		changeContentEnabled = true;
+	})
 
 	function changeContent(i=null) {
-		if (i != null) {
-			$(window).scrollTop(currIndex * WINDOW_HEIGHT);
-		}
 		currPosition = $(window).scrollTop();
 		let percentageOfStroke = 1 - currPosition / WINDOW_HEIGHT;
-		let newOffset = TOTAL_OFFSET * percentageOfStroke;
-		$("#circle").attr("stroke-dashoffset", newOffset + "px");
+		console.log(percentageOfStroke);
+		currentOffset = TOTAL_OFFSET * percentageOfStroke;
+		$("#circle").css("stroke-dashoffset", currentOffset + "px");
 
 		prevIndex = currIndex;
-		currIndex = i != null ? i : Math.min(Math.max(-1 * Math.floor(percentageOfStroke), 0), NUM_SECTIONS - 1);
-
-		console.log(currIndex)
+		if (i != null) {
+			currIndex = i;
+		} else {
+			currIndex = Math.min(Math.max(-1 * Math.floor(percentageOfStroke), 0), NUM_SECTIONS - 1);
+		}
 
 		if (prevIndex != currIndex) {
+			if (lastClick >= (Date.now() - delay)) {
+			    return;
+			}
+			lastClick = Date.now();
+
 			$("#text").removeClass("move-up")
 			sectionInfo = SECTIONS[currIndex];
 			$("#text *").stop().fadeOut(400, function() {

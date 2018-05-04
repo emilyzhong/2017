@@ -133,7 +133,8 @@ nav {
       text-transform: uppercase;
       color: #4a4a4a;
       font-size: 3em;
-      letter-spacing: 5px; }
+      letter-spacing: 5px;
+      margin-bottom: 8px; }
     #svg-container #text #description {
       font-family: 'PT Mono', monospace;
       color: #676767;

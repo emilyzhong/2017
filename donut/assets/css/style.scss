@@ -48,8 +48,6 @@ nav {
     		.selected-nav {
     			opacity: 1;
     		}
-
-
     	}
 
     	.hidden {
@@ -136,6 +134,7 @@ nav {
 			color: $black;
 			font-size: 3em;
 			letter-spacing: 5px;
+			margin-bottom: 8px;
 		}
 		#description {
 			font-family: 'PT Mono', monospace;
