@@ -100,6 +100,13 @@ $(document).ready(function() {
 		changeContentEnabled = true;
 	})
 
+	$(".nav-item").hover(function() {
+		let navIndex = navItems.index(this);
+		$(this).prepend("<div class='nav-item-label'>" + SECTIONS[navIndex].title + "</div>");
+	}, function() {
+		$(this).find("div").remove();
+	})
+
 	function changeContent(i=null) {
 		currPosition = $(window).scrollTop();
 		let percentageOfStroke = 1 - currPosition / WINDOW_HEIGHT;
@@ -108,6 +115,7 @@ $(document).ready(function() {
 		$("#circle").css("stroke-dashoffset", currentOffset + "px");
 
 		prevIndex = currIndex;
+		
 		if (i != null) {
 			currIndex = i;
 		} else {
@@ -132,6 +140,8 @@ $(document).ready(function() {
 				$("#donut-image").attr("src", sectionInfo.imageSrc);
 			}).fadeIn('fast');
 
+			// $(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav").find("div").remove();
+			// $(".nav-item:eq(" + currIndex + ")").addClass("selected-nav").prepend("<div class='nav-item-label'>" + SECTIONS[currIndex].title + "</div>");
 			$(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav");
 			$(".nav-item:eq(" + currIndex + ")").addClass("selected-nav");
 		}
