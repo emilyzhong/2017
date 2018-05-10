@@ -123,12 +123,18 @@ $(document).ready(function() {
 		}
 
 		if (prevIndex != currIndex) {
+			// $(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav").find("div").remove();
+			// $(".nav-item:eq(" + currIndex + ")").addClass("selected-nav").prepend("<div class='nav-item-label'>" + SECTIONS[currIndex].title + "</div>");
+			$(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav");
+			$(".nav-item:eq(" + currIndex + ")").addClass("selected-nav");
+
 			if (lastClick >= (Date.now() - delay)) {
 			    return;
 			}
+
 			lastClick = Date.now();
 
-			$("#text").removeClass("move-up")
+			$("#text").removeClass("move-up");
 			sectionInfo = SECTIONS[currIndex];
 			$("#text *").stop().fadeOut(400, function() {
 				$("#title").text(sectionInfo.title);
@@ -139,11 +145,6 @@ $(document).ready(function() {
 			$("#donut-image").stop().fadeOut('fast', function() {
 				$("#donut-image").attr("src", sectionInfo.imageSrc);
 			}).fadeIn('fast');
-
-			// $(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav").find("div").remove();
-			// $(".nav-item:eq(" + currIndex + ")").addClass("selected-nav").prepend("<div class='nav-item-label'>" + SECTIONS[currIndex].title + "</div>");
-			$(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav");
-			$(".nav-item:eq(" + currIndex + ")").addClass("selected-nav");
 		}
 	}
 

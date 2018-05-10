@@ -26,7 +26,6 @@ nav {
 
     	h3 {
 	    	font-weight: 400;
-	    	cursor: pointer;
 	    	position: relative;
 	    	display: flex;
 	    	align-items: flex-end;
@@ -46,6 +45,7 @@ nav {
     			margin-left: 8px;
     			opacity: 0.5;
     			position: relative;
+    			cursor: pointer;
     		}
 
     		.selected-nav {
@@ -139,8 +139,10 @@ nav {
 		z-index: 1;
 		transform: translateX(-80%);
 		animation-fill-mode: both;
-		transition: 1s;
 		top: 50%;
+		mix-blend-mode: multiply;
+		transition: 1s;
+
 		#title {
 			font-family: 'Oswald', sans-serif;
 			font-weight: 700;
@@ -148,7 +150,8 @@ nav {
 			color: $black;
 			font-size: 3em;
 			letter-spacing: 5px;
-			margin-bottom: 8px;
+			margin-bottom: 16px;
+			line-height: 1.4em;
 		}
 		#description {
 			font-family: 'PT Mono', monospace;

@@ -46,7 +46,6 @@ nav {
     margin-right: 16px; }
     nav .nav-section h3 {
       font-weight: 400;
-      cursor: pointer;
       position: relative;
       display: flex;
       align-items: flex-end; }
@@ -62,7 +61,8 @@ nav {
         border: 12px solid white;
         margin-left: 8px;
         opacity: 0.5;
-        position: relative; }
+        position: relative;
+        cursor: pointer; }
       nav .nav-section .nav-item-container .selected-nav {
         opacity: 1; }
     nav .nav-section .nav-item-label {
@@ -137,8 +137,9 @@ nav {
     z-index: 1;
     transform: translateX(-80%);
     animation-fill-mode: both;
-    transition: 1s;
-    top: 50%; }
+    top: 50%;
+    mix-blend-mode: multiply;
+    transition: 1s; }
     #svg-container #text #title {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
@@ -146,7 +147,8 @@ nav {
       color: #4a4a4a;
       font-size: 3em;
       letter-spacing: 5px;
-      margin-bottom: 8px; }
+      margin-bottom: 16px;
+      line-height: 1.4em; }
     #svg-container #text #description {
       font-family: 'PT Mono', monospace;
       color: #676767;
