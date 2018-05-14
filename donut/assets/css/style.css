@@ -184,10 +184,10 @@ nav {
       margin-bottom: 16px;
       line-height: 1.4em; }
     #svg-container #text #description {
-      font-family: 'PT Mono', monospace;
+      font-family: 'Oxygen', sans-serif;
       color: #676767;
       line-height: 1.9em;
-      letter-spacing: 1px; }
+      letter-spacing: 1.5px; }
     #svg-container #text.default {
       transform: translateY(calc(-50% + 10px)) translateX(-50%); }
     #svg-container #text.move-up {
@@ -209,6 +209,11 @@ body {
   height: 400vh;
   width: 100vw;
   position: relative; }
+
+a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 0.5px dotted red; }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;

@@ -61,7 +61,7 @@ const SECTIONS = [
 		{
 			title: "Blueprint",
 			imageSrc: "assets/img/bp.png",
-			description: "Every semester, I develop for nonprofits through Blueprint, a student organization that focuses on technology for social good."
+			description: "Every semester, I develop web and mobile applications for nonprofits through Blueprint, a student organization that focuses on technology for social good."
 		},
 		{
 			title: "Cal Hacks",

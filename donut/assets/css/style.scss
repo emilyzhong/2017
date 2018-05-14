@@ -195,10 +195,12 @@ nav {
 			line-height: 1.4em;
 		}
 		#description {
-			font-family: 'PT Mono', monospace;
+			// font-family: 'PT Mono', monospace;
+			// font-family: 'Quicksand', sans-serif;
+			font-family: 'Oxygen', sans-serif;
 			color: $gray;
 			line-height: 1.9em;
-			letter-spacing: 1px;
+			letter-spacing: 1.5px;
 		}
 
 		&.default {
@@ -210,7 +212,6 @@ nav {
 		}
 	}
 }
-
 
 main {
 	width: 700px;
@@ -231,6 +232,12 @@ body {
 	height: 400vh;
 	width: 100vw;
 	position: relative;
+}
+
+a {
+	text-decoration: none;
+	padding-bottom: 2px;
+	border-bottom: 0.5px dotted red;
 }
 
 // RESET
