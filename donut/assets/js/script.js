@@ -106,6 +106,12 @@ $(document).ready(function() {
 	}
 
 	function setColors(image) {
-		$("#text a").css("color", colorThief.getColor(image));
+		let colors = colorThief.getColor(image);
+		$("a").css("color", rgb(colors));
+		console.log("change: " + $("a").css("color"));
+	}
+
+	function rgb(colors) {
+		return "rgb(" + colors.join(", ") + ")";
 	}
 });
