@@ -195,8 +195,7 @@ nav {
 
 .hidden-section {
   height: 100vh;
-  width: 100vw;
-  border: 1px solid red; }
+  width: 100vw; }
 
 main {
   width: 700px;
