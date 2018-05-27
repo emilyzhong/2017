@@ -12,30 +12,32 @@
 		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="icon" href="assets/img/favicon.ico">
-		<script src="assets/js/quantize.js"></script>
-		<script src="assets/js/color-thief.js"></script>
 		<script src="assets/js/content.js"></script>
 		<title>Emily Zhong</title>
 	</head>
 	<body>
 		<main>
 			<div id="svg-container">
+				<div id="image-container">
+					<svg viewBox="0 0 500 500" xml:space="preserve" class="circle">
+						<circle cx="250" cy="250" r="200" fill="none" id="circle"/>
+					</svg>
+					<!-- <img id="donut-image" src=""> -->
+				</div>
 				<div id="text" class="default move-up">
 					<h1 id="title"></h1>
 					<p id="description"></p>
 				</div>
-				<div id="image-container">
-					<img id="donut-image" src="">
-				</div>
-				<svg viewBox="0 0 500 500" xml:space="preserve" class="circle">
-						<circle cx="250" cy="250" r="200" fill="none" id="circle"/>
-				</svg>
 			</div>
 			<nav>
 				<div class="nav-section">
-					<h3 class="nav-item">
-						<i class="material-icons">home</i>
+					<h3 class="nav-item nav-title">
+						Emily Zhong
+						<!-- <i class="material-icons">home</i> -->
 					</h3>
+					<!-- <div class="nav-item-container">
+						<div class="nav-item"></div>
+					</div> -->
 				</div>
 				<div class="nav-section">
 					<h3 class="nav-title">code</h3>
@@ -59,10 +61,11 @@
 						<div class="nav-item"></div>
 						<div class="nav-item"></div>
 						<div class="nav-item"></div>
+						<div class="nav-item"></div>
 					</div>
 				</div>
 				<div class="nav-section">
-					<h3 class="nav-item">Contact</h3>
+					<h3 class="nav-item nav-title">Contact</h3>
 				</div>
 			</nav>
 			
@@ -70,8 +73,14 @@
 		<script>
 			// Allows for jumping to sections with id appended to url address
 			for (let section in SECTIONS) {
-				sectionTitle = SECTIONS[section].title.replace(/\s/g, '').replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace("'","").toLowerCase();
-				$("body").append("<section class='hidden-section' id='" + sectionTitle + "'></section>");
+				section = SECTIONS[section]
+				sectionTitle = section.title.replace(/\s/g, '').replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace("'","").toLowerCase();
+				$("body").append(`
+					<section class='hidden-section' class='${sectionTitle}'>
+						<p class="title">${section.title}</h1>
+						<p class="description">${section.description}</p>
+					</section>
+				`);
 			}
 		</script>
 	</body>

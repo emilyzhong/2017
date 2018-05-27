@@ -5,20 +5,26 @@ $(document).ready(function() {
 	const TOTAL_OFFSET = 1300;
 	const delay = 200;
 	const navItems = $(".nav-item");
-	const colorThief = new ColorThief();
 
-	let lastClick = 0;
+	let lastClick = Date.now() - delay;
 	let changeContentEnabled = true;
 	let currentOffset = 0;
-	let currIndex = null;
+	let currIndex = -1;
 
 	// setTimeout(function() {
 	// 	$("#loading-svg").fadeOut();
 	// 	$("main").fadeIn();
 	// }, 3000);
 
+	for (let i = 0; i < SECTIONS.length; i++) {
+		$("#image-container")
+			.append("<img class=\"donut-image\" src=\"" + SECTIONS[i].imageSrc + "\">")
+	}
+
 	$("body").css("height", (NUM_SECTIONS + 1) * 100 + "vh");
+
 	changeContent();
+
 	$(window).scroll(function() {
 		if (changeContentEnabled) {
 			changeContent();
@@ -50,7 +56,7 @@ $(document).ready(function() {
 		$(this).find("div").remove();
 	})
 
-	function changeContent(i=null) {
+	function changeContent() {
 		currPosition = $(window).scrollTop();
 		let percentageOfStroke = 1 - currPosition / WINDOW_HEIGHT;
 		currentOffset = TOTAL_OFFSET * percentageOfStroke;
@@ -58,11 +64,7 @@ $(document).ready(function() {
 
 		prevIndex = currIndex;
 		
-		if (i != null) {
-			currIndex = i;
-		} else {
-			currIndex = Math.min(Math.max(-1 * Math.floor(percentageOfStroke), 0), NUM_SECTIONS - 1);
-		}
+		currIndex = Math.min(Math.max(-1 * Math.floor(percentageOfStroke), 0), NUM_SECTIONS - 1);
 
 		if (prevIndex != currIndex) {
 			$(".nav-item:eq(" + prevIndex + ")").removeClass("selected-nav");
@@ -71,7 +73,9 @@ $(document).ready(function() {
 			sectionInfo = SECTIONS[currIndex];
 
 			if (lastClick >= (Date.now() - delay)) {
-				$("#donut-image").attr("src", sectionInfo.imageSrc);
+				$(".donut-image:eq(" + prevIndex + ")").fadeOut();
+				$(".donut-image:eq(" + currIndex + ")").fadeIn();
+
 				$("#text *").stop().fadeOut();
 				$("#title").html(sectionInfo.title);
 				$("#description").html(sectionInfo.description);
@@ -79,17 +83,8 @@ $(document).ready(function() {
 			} else {
 				lastClick = Date.now();
 
-				$("#donut-image").stop().fadeOut('fast', function() {
-					$("#donut-image").attr("src", sectionInfo.imageSrc);
-					$("#donut-image").on('load', function() {
-						let image = new Image();
-						image.crossOrigin = "Anonymous"
-						image.src = sectionInfo.imageSrc;
-						image.onload = function() {
-							setColors(image);
-						};
-					})
-				}).fadeIn('fast');
+				$(".donut-image:eq(" + prevIndex + ")").fadeOut();
+				$(".donut-image:eq(" + currIndex + ")").fadeIn();
 
 				$("#text").removeClass("move-up");
 				$("#text *").stop().fadeOut(400, function() {
@@ -104,14 +99,5 @@ $(document).ready(function() {
 	function mod(n, m) {
 	  return ((n % m) + m) % m;
 	}
-
-	function setColors(image) {
-		let colors = colorThief.getColor(image);
-		$("a").css("color", rgb(colors));
-		console.log("change: " + $("a").css("color"));
-	}
-
-	function rgb(colors) {
-		return "rgb(" + colors.join(", ") + ")";
-	}
+	
 });
